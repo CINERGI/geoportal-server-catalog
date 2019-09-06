@@ -45,7 +45,20 @@ function (lang) {
           if (text) {
             nd.innerHTML = text;
           }
+      },
+    createRestMDLink: function(itemId, hrefPlus) {
+      var uri = "./rest/metadata/item/"+encodeURIComponent(itemId);
+      var href=uri+hrefPlus;
+      if (AppContext.geoportal.supportsApprovalStatus ||
+          AppContext.geoportal.supportsGroupBasedAccess) {
+        var client = new AppClient();
+        href = client.appendAccessToken(href);
+
       }
+      return href;
+
+    },
+
   };
   
   return oThisObject;

@@ -70,14 +70,14 @@ define(["dojo/_base/declare",
                     this.maxShowPageCount = 9999;
                 }
                 // We refresh on clicking view, not select.
-                // this.own(topic.subscribe("app/collection/selectCollection",function(params){
-                //   var menu = registry.byId("collectionMenuNode");
-                //   var coll = menu.get("displayedValue");
-                //   self.dropPane.set("label" ,  "Collection Items from " + coll);
-                //
-                //   self.dropPane.set("title" ,  "Collection Items from " + coll);
-                //
-                // }));
+                this.own(topic.subscribe("app/collection/selectCollection",function(params){
+                  var menu = registry.byId("collectionMenuNode");
+                  var coll = menu.get("displayedValue");
+                  self.dropPane.set("label" ,  "Collection Items from " + coll);
+
+                  self.dropPane.set("title" ,  "Collection Items from " + coll);
+
+                }));
                 //  document.body.appendChild(this.statusNode.domNode);
                 // this.statusNode.target = this.dropPane.domNode;
                 //  this.own(topic.subscribe("app/collection/assignEvent",function(item){

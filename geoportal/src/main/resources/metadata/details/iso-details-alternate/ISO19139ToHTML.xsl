@@ -12,13 +12,13 @@ Revision History: Created 3/19/2009 avienneau
 is done ISO19139usgin.xslt. Leave it here so nothing in Geoportal gets broken...
 -->
 
-  <xsl:import href = "Imports\general.xslt" />
-  <xsl:import href = "Imports\iso19139usgin.xslt" />
-  <xsl:import href = "Imports\XML.xslt" />
-  <xsl:import href = "Imports\codelists.xslt" />
-  <xsl:import href = "Imports\auxLanguages.xslt" />
-  <xsl:import href = "Imports\auxCountries.xslt" />
-  <xsl:import href = "Imports\auxUCUM.xslt" />
+  <xsl:import href = "imports\general.xslt" />
+  <xsl:import href = "imports\iso19139usgin.xslt" />
+  <xsl:import href = "imports\XML.xslt" />
+  <xsl:import href = "imports\codelists.xslt" />
+  <xsl:import href = "imports\auxLanguages.xslt" />
+  <xsl:import href = "imports\auxCountries.xslt" />
+  <xsl:import href = "imports\auxUCUM.xslt" />
   <xsl:import href = "ISO19139ToSchemaOrgDataset1.0.xslt"/>
 
   <xsl:output method="xml" indent="yes" encoding="UTF-8" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" />

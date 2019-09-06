@@ -51,6 +51,10 @@
     font-size:8px;
     font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;text-indent:0;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:12px;line-height:2.66667}
 
+
+.g-search-pane-left {
+    overflow-y: scroll;
+}
 .g-spatial-filter-locator {
 
     top: 234px;
@@ -81,6 +85,11 @@
     width: 6em;
 
     height: 1.5em;
+}
+.g-item-card .g-item-description {
+    max-height: 10em;
+    overflow: hidden;
+    width: 85%;
 }
 
 .g-item-card .g-item-source-and-date {

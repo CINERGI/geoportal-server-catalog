@@ -53,8 +53,9 @@ define(["dojo/_base/declare",
             postCreate: function () {
                 this.inherited(arguments);
                 var self = this;
-                this.own(topic.subscribe("app/collection/selectCollection", function (params) {
-                    self._renderActionStatus(self.mdRecord);
+                this.own(topic.subscribe("app/collection/updatedCollections", function (params) {
+                    self.addCollectionMenu();
+                    self.removeCollectionMenu();
                 }));
 
                 // this.own(topic.subscribe(appTopics.ItemOwnerChanged,function(params){

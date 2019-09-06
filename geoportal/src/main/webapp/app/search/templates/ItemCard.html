@@ -1,11 +1,11 @@
-<div class="g-item-card" 
+<div class="g-item-card row container-fluid"
   data-dojo-attach-point="containerNode"
   data-dojo-attach-event="onmouseenter: _mouseenter, onmouseleave: _mouseleave">
-  <div class="g-item-title" data-dojo-attach-point="titleNode"></div>
+  <a class="g-item-title" data-dojo-attach-point="titleNode" target="_blank"></a>
  <!--  <button class="action-button g-item-save  pull-right"
           data-dojo-attach-point="saveNode"  >Save</button>
 -->
-  <div>
+  <div class="row">
     <img class="g-item-thumbnail pull-right" data-dojo-attach-point="thumbnailNode"/>
     <div class="g-item-source-and-date pull-right clearfix" data-dojo-attach-point="collectionAndDateNode"></div>
     <div class="pull-left" >
@@ -14,7 +14,17 @@
     </div>
     <div class="g-item-description pull-left clearfix" data-dojo-attach-point="descriptionNode"></div>
   </div>
-  <div class="g-item-actions clearfix" data-dojo-attach-point="actionsNode"></div>
+    <div class="row">
+
+
+      <span class="g-item-actions " data-dojo-attach-point="jupyterNode"></span>
+    <span class="g-item-actions " data-dojo-attach-point="actionsNode"></span>
+    <span class="g-item-actions " data-dojo-attach-point="metadataNode"></span>
+      <span class="g-item-actions " data-dojo-attach-point="cinergiNode"></span>
+      <span class="g-item-actions " data-dojo-attach-point="saveNode"></span>
+      <span class="g-item-actions " data-dojo-attach-point="authenticatedNode"></span>
+  </div>
+
 
   <div class="g-item-identification" data-dojo-attach-point="idNode"></div>
 </div>

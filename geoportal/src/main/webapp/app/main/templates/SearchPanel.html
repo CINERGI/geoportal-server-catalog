@@ -41,6 +41,61 @@ https://stackoverflow.com/questions/13883902/dijit-why-am-i-getting-an-uncaught-
           label:'${i18n.search.criteria.boundingBox}'">
       </div>
       -->
+
+
+      <div data-dojo-type="app/search/TemporalFilter"
+           data-dojo-props="
+          field:'apiso_PublicationDate_dt',
+          interval:'year',
+          open:false,
+          label:'Publication Date',
+          fieldsOperator: 'must'">
+      </div>
+      <div data-dojo-type="app/search/TermsAggregation"
+           data-dojo-props="
+             field:'place_keywords_s',
+             open:false,
+             props:{size:1000},
+             label:'Location Keyword' ">
+      </div>
+
+
+
+      <!-- e.g. field:'keywords_s',label:'Keywords',props:{size:20,min_doc_count:500} -->
+      <div data-dojo-type="app/search/TermsAggregation"
+           data-dojo-props="
+             field:'tags_s',
+             label:'Original Keyword',
+             props:{size:200},
+             tooltip: 'Keywords from source metadata'">
+      </div>
+      <div data-dojo-type="app/search/HierarchyAggregation"
+           data-dojo-props="field:'hierarchies_cat',
+             rootTerm:'Category',
+             label:'DDStudio Enhanced Categories',
+             props:{size:1000,
+             <!-- order:{_term:'asc'} -->
+             },
+             addRoot: false,
+             showRoot: true,
+             tooltip: 'Keyword hierarchy created by DDStudio keyword enhancer'">
+      </div>
+      <div data-dojo-type="app/search/TermsAggregation"
+           data-dojo-props="
+             field:'cited_individual_s',
+             label:'Cited Authors',
+             props:{size:2000,order:{_term:'asc'}},
+             tooltip: 'Author, Originator, Principal investigator'">
+      </div>
+
+      <div data-dojo-type="app/search/TermsAggregation"
+           data-dojo-props="
+             field:'cited_organization_s',
+             label:'Cited Organizations',
+             props:{size:2000,order:{_term:'asc'}},">
+      </div>
+
+
       <div data-dojo-type="app/search/DateFilter"
            data-dojo-props="
           nestedPath:'timeperiod_nst',
@@ -62,63 +117,18 @@ https://stackoverflow.com/questions/13883902/dijit-why-am-i-getting-an-uncaught-
           label:'Temporal Extent (slider)',
           fieldsOperator: 'should'">
       </div>
-        <div data-dojo-type="app/search/HierarchyAggregation"
-                   data-dojo-props="field:'hierarchies_cat',
-             rootTerm:'Category',
-             label:'CINERGI facet keywords',
-             props:{size:1000,
-             <!-- order:{_term:'asc'} -->
-             },
-             addRoot: false,
-             showRoot: true,
-             tooltip: 'Keywords added by CINERGI keyword enhancer'">
-    </div>
-    <!-- e.g. field:'keywords_s',label:'Keywords',props:{size:20,min_doc_count:500} -->
-      <div data-dojo-type="app/search/TermsAggregation"
-             data-dojo-props="
-             field:'tags_s',
-             label:'Original Keywords',
-             props:{size:200},
-             tooltip: 'Keywords from source metadata'">
-        </div>
-
-      <div data-dojo-type="app/search/TermsAggregation"
-             data-dojo-props="
-             field:'cited_individual_s',
-             label:'Cited individual',
-             props:{size:2000,order:{_term:'asc'}},
-             tooltip: 'Author, Originator, Principal investigator'">
-        </div>
-
-      <div data-dojo-type="app/search/TermsAggregation"
-             data-dojo-props="
-             field:'cited_organization_s',
-             label:'Cited organization',
-             props:{size:2000,order:{_term:'asc'}},">
-        </div>
-
-      <div data-dojo-type="app/search/TermsAggregation"
-             data-dojo-props="
-             field:'place_keywords_s',
-             open:false,
-             props:{size:1000},
-             label:'Place keywords' ">
-        </div>
 
 
-        <div data-dojo-type="app/search/TemporalFilter"
-             data-dojo-props="
-          field:'apiso_PublicationDate_dt',
-          interval:'year',
-          open:false,
-          label:'Publication Date',
-          fieldsOperator: 'must'">
-        </div>
 
-      <div>Metadata Properties</div>
+
+
+
+
+     <!-- <div>Metadata Properties</div> -->
 
       <div data-dojo-type="app/search/TemporalFilter"
          data-dojo-props="
+         conditionallyDisabled: true,
           field:'sys_modified_dt',
           interval:'day',
           open:false,
@@ -127,6 +137,7 @@ https://stackoverflow.com/questions/13883902/dijit-why-am-i-getting-an-uncaught-
 
       <div data-dojo-type="app/search/TermsAggregation"
         data-dojo-props="
+        conditionallyDisabled: true,
         field:'sys_metadatatype_s',
         label:'${i18n.search.criteria.metadataType}',
         props:{size:20,order:{_term:'asc'}}">
@@ -134,6 +145,7 @@ https://stackoverflow.com/questions/13883902/dijit-why-am-i-getting-an-uncaught-
 
       <div data-dojo-type="app/search/TermsAggregation"
         data-dojo-props="
+        conditionallyDisabled: true,
         field:'src_source_name_s',
         label:'Metadata Collection',
         props:{size:200,order:{_term:'asc'}}">

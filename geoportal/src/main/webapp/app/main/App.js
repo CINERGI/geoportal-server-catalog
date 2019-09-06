@@ -26,7 +26,8 @@ define(["dojo/_base/declare",
         "app/main/AboutPanel",
         "app/content/MetadataEditor",
         "app/content/UploadMetadata",
-      "app/main/CollectionsPanel"
+      "app/main/CollectionsPanel",
+    "app/main/StartPanel"
     ],
 function(declare, lang, topic, appTopics, Templated, template, i18n, util, SearchPanel, MapPanel, AboutPanel,
     MetadataEditor, UploadMetadata, CollectionPane1) {
@@ -44,7 +45,10 @@ function(declare, lang, topic, appTopics, Templated, template, i18n, util, Searc
       var ignoreMapPanelActivated = false;
       $("#branding").on("click",function(e) {
         e.preventDefault()
-        $("a[href='#searchPanel']").tab('show');
+        $("a[href='#startPanel']").tab('show');
+      });
+      $("a[href='#startPanel']").on("shown.bs.tab",function(e) {
+        location.hash = '#startPanel';
       });
       $("a[href='#searchPanel']").on("shown.bs.tab",function(e) {
         location.hash = '#searchPanel';
@@ -83,7 +87,7 @@ function(declare, lang, topic, appTopics, Templated, template, i18n, util, Searc
       });
       
       if (location.hash==null || location.hash.length==0) {
-        location.hash = '#searchPanel';
+        location.hash = '#startPanel';
       } else if ( $("a[href='"+location.hash+"']").length > 0) {
         $("a[href='"+location.hash+"']").tab("show");
       }

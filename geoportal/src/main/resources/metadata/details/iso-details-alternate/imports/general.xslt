@@ -312,6 +312,7 @@
 			}
 		}
 	/* ]]> */
+
 	</script>
 </xsl:template>
 

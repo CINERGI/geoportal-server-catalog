@@ -204,6 +204,13 @@
       <artifactId>saxon</artifactId>
       <version>9.1.0.8</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.5.1</version>
+      <scope>test</scope>
+    </dependency>
 
   </dependencies>
   <build>

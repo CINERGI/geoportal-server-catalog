@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gml="http://www.opengis.net/gml" xmlns:res="http://www.esri.com/metadata/res/">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+	xmlns:gmi="http://www.isotc211.org/2005/gmi"
+	xmlns:srv="http://www.isotc211.org/2005/srv" 
+	xmlns:gco="http://www.isotc211.org/2005/gco" 
+	xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gml="http://www.opengis.net/gml" xmlns:res="http://www.esri.com/metadata/res/">
 	<!-- An XSLT template for displaying metadata that is stored in the ISO 19139 metadata format.
 
      Copyright (c) 2009-2010, Environmental Systems Research Institute, Inc. All rights reserved.
@@ -10,6 +14,8 @@
 	 modify formatting to make more compact
 	 fix bad call for template to get metadata section inforamtion displayed -->
 	<!-- SMR add imports 2012-09-07 -->
+	<!-- SMR 2017-10-03 add test for gmi:MI_Metadata as root elemenent. Doesn't display any other gmi elements if present. -->
+	
 	<xsl:import href = "general.xslt" />
 	<xsl:import href = "XML.xslt" />
 	<xsl:import href = "codelists.xslt" />
@@ -19,11 +25,11 @@
 	
 	<xsl:output method="xml" indent="yes" encoding="UTF-8" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 	<xsl:template name="iso19139">
-	<xsl:apply-templates select="/gmd:MD_Metadata | /node()/gmd:MD_Metadata"  mode="test"/>	
+	<xsl:apply-templates select="//gmd:MD_Metadata | //gmi:MI_Metadata"  mode="test"/>	
 	</xsl:template>
 
 
-<xsl:template match="gmd:MD_Metadata" mode="test" >
+<xsl:template match="gmd:MD_Metadata | gmi:MI_Metadata" mode="test" >
 		<h3>Metadata record format is ISO 19139 XML</h3>
 		<h1>
 			<xsl:value-of select="//gmd:identificationInfo//gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString"/>
@@ -52,7 +58,10 @@
 		/gmd:MD_Metadata/gmd:metadataMaintenance |
 		/gmd:MD_Metadata/gmd:metadataConstraints | 
 		/gmd:MD_Metadata/gmd:locale"/>
-		<ul>
+	<!-- import/usgin_wMap -->
+	<!-- <nav style="toc toc-left js-toc relative z-1 transition(dash dash)300 absolute pa4 is-position-fixed"> -->
+	<nav class="nav  nav-pills nav-stacked flex-column" data-spy="affix" data-offset-top="5em" aria-orientation="vertical">
+	<ul>
 			<li class="iso19139heading">ISO19139 metadata content</li>
 			<!-- Resource Identification -->
 			<xsl:call-template name="TOC-HEADING">
@@ -117,6 +126,7 @@
 				</li>
 			</xsl:if>
 		</ul>
+	</nav>
 		<!-- PUT METADATA CONTENT ON THE HTML PAGE  -->
 		<!-- Resource Identification -->
 		<xsl:apply-templates select="$dataIdInfo/*" mode="iso19139"/>
@@ -671,6 +681,18 @@
 		</xsl:choose>
 		<dl>
 			<dd>
+				<xsl:for-each select="gmd:abstract">
+					<dt>
+						<span class="element">Resource Abstract: </span>
+					</dt>
+					<dl>
+						<dd>
+							<pre class="wrap">
+								<xsl:call-template name="CharacterString"/>
+							</pre>
+						</dd>
+					</dl>
+				</xsl:for-each>
 				<xsl:apply-templates select="gmd:citation/gmd:CI_Citation" mode="iso19139"/>
 				<xsl:if test="gmd:topicCategory[gmd:MD_TopicCategoryCode]">
 					<dt>
@@ -686,18 +708,6 @@
 					</xsl:if>
 				</xsl:if>
 				<xsl:apply-templates select="gmd:descriptiveKeywords/gmd:MD_Keywords" mode="iso19139"/>
-				<xsl:for-each select="gmd:abstract">
-					<dt>
-						<span class="element">Resource Abstract: </span>
-					</dt>
-					<dl>
-						<dd>
-							<pre class="wrap">
-								<xsl:call-template name="CharacterString"/>
-							</pre>
-						</dd>
-					</dl>
-				</xsl:for-each>
 				<xsl:for-each select="gmd:purpose">
 					<dt>
 						<span class="element">purpose: </span>
@@ -3371,7 +3381,7 @@
 	<!-- gml:TimeInstant -->
 	<xsl:template name="TimeInstant">
 		<!-- NOTE: ignoring attributes: frame, calendarEraName, indeterminatePosition -->
-		<xsl:value-of select="."/>
+		<xsl:value-of select="string(.)"/>
 	</xsl:template>
 	<!-- gco:Boolean -->
 	<xsl:template name="Boolean">

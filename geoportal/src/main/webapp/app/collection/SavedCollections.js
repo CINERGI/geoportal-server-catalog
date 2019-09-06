@@ -219,7 +219,7 @@ define(["dojo/_base/declare",
                     this.menuNode.option =[];
                     this.addOptions();
                    this.menuNode.value= ncID;
-                    topic.publish("app/collection/selectCollection", ncID);
+                    topic.publish("app/collection/updatedCollections", ncID);
                 }
                 this.addCollectionBtn.toggleDropDown();
 
@@ -230,14 +230,15 @@ define(["dojo/_base/declare",
                 var ColID = this.getSelectedCollectionValue();
 
                 if (ColID !== "default" && ColID !== "All") {
-                    var mda = CollectionBase.getMdRecords("collections",ColID);
-                    ArrayUtil.forEach(mda, function(md){
-                        CollectionBase._removeCollectionMdRecord(md.val,ColID);
-                    });
-                    var coll = CollectionBase.getCollectionById(ColID);
-                            localStorage.removeItem("cItem-" +coll.key);
+                    if (confirm("Delete Collection?")) {
+                        var mda = CollectionBase.getMdRecords("collections", ColID);
+                        ArrayUtil.forEach(mda, function (md) {
+                            CollectionBase._removeCollectionMdRecord(md.val, ColID);
+                        });
+                        var coll = CollectionBase.getCollectionById(ColID);
+                        localStorage.removeItem("cItem-" + coll.key);
                     }
-
+                }
                    // localStorage.removeItem("cItem-" + ColID);
                     // this.menuNode.options = ArrayUtil.filter(this.menuNode.options, function(item, index){
                     //     return item.value!==ColID  });
@@ -247,6 +248,7 @@ define(["dojo/_base/declare",
 
                     //this.menuNode.removeOption(ColID);
 
+                topic.publish("app/collection/updatedCollections", ColID);
                 this._selCollection ("All");
 
 

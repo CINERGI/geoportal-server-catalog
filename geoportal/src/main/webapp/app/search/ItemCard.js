@@ -147,17 +147,19 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
         //util.setNodeText(this.descriptionNode,item.description);
         this._renderDescription(item,highlight);
       this._renderThumbnail(item);
-      this._renderItemLinks(hit._id,item);
+     // this._renderItemLinks(hit._id,item);
+      var itemsDropdown = this._renderItemDropdown(hit._id,item);
+      this._renderCinergiAddToDropdown(itemsDropdown, item);
       this._renderLinksDropdown(item,links);
       this._renderOptionsDropdown(hit._id,item);
       this._renderAddToMap(item,links);
       this._renderServiceStatus(item);
       this._renderUrlLinks(item);
 
-     //   this._renderWorkbenchLinksDropdown(item,links);
+
       this._renderWbLink(item);
-        this._renderCinergiLinks(hit._id,item);
-        this._renderSchemaOrg(item);
+      //  this._renderCinergiLinks(hit._id,item);
+      //  this._renderSchemaOrg(item);
       this._renderId(item);
       var status = "save";
       if (this.itemIsSaved){
@@ -318,36 +320,29 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
     
     _renderItemLinks: function(itemId,item) {
       if (AppContext.appConfig.searchResults.showLinks) {
-        var actionsNode = this.actionsNode;
-        var uri = "./rest/metadata/item/"+encodeURIComponent(itemId);
+        var metadataNode = this.metadataNode;
         var htmlNode = domConstruct.create("a",{
-          href: uri+"/html",
+          href: util.createRestMDLink(itemId, "/html"),
           target: "_blank",
           title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
           "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
           innerHTML: i18n.item.actions.html
-        },actionsNode);
+        },metadataNode);
         var xmlNode = domConstruct.create("a",{
-          href: uri+"/xml",
+          href: util.createRestMDLink(itemId, "/xml"),
           target: "_blank",
           title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.xml, title: item.title}),
           "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.xml, title: item.title}),
           innerHTML: i18n.item.actions.xml
-        },actionsNode);
+        },metadataNode);
         var jsonNode = domConstruct.create("a",{
-          href: uri+"?pretty=true",
+          href: util.createRestMDLink(itemId, "?pretty=true"),
           target: "_blank",
           title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.json, title: item.title}),
           "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.json, title: item.title}),
           innerHTML: i18n.item.actions.json
-        },actionsNode);
-        if (AppContext.geoportal.supportsApprovalStatus || 
-            AppContext.geoportal.supportsGroupBasedAccess) {
-          var client = new AppClient();
-          htmlNode.href = client.appendAccessToken(htmlNode.href); 
-          xmlNode.href = client.appendAccessToken(xmlNode.href);
-          jsonNode.href = client.appendAccessToken(jsonNode.href);
-        }
+        },metadataNode);
+
         var v = item.sys_metadatatype_s;
         if (typeof v === "string" && v === "json") {
           htmlNode.style.visibility = "hidden";
@@ -355,7 +350,67 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
         }
       }
     },
-    
+
+
+    _renderItemDropdown: function(itemId,item) {
+      if (AppContext.appConfig.searchResults.showLinks) {
+        var actionName = "Item Details";
+        var metadataNode = this.metadataNode;
+        var dd = domConstruct.create("div",{
+          "class": "dropdown",
+          "style": "display:inline-block;"
+        },metadataNode);
+        var ddbtn = domConstruct.create("a",{
+          "class": "dropdown-toggle",
+          "href": "#",
+          "data-toggle": "dropdown",
+          "aria-haspopup": true,
+          "aria-expanded": true,
+          title: string.substitute(i18n.item.actions.titleFormat, {action: actionName, title: item.title}),
+          "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: actionName, title: item.title}),
+          innerHTML: actionName
+        },dd);
+        domConstruct.create("span",{
+          "class": "caret"
+        },ddbtn);
+        var ddul = domConstruct.create("ul",{
+          "class": "dropdown-menu",
+        },dd);
+
+        var ddli = domConstruct.create("li",{},ddul);
+        var htmlNode = domConstruct.create("a",{
+          href: util.createRestMDLink(itemId, "/html"),
+          target: "_blank",
+          title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
+          "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
+          innerHTML: i18n.item.actions.html
+        },ddli);
+        var ddli2 = domConstruct.create("li",{},ddul);
+        var xmlNode = domConstruct.create("a",{
+          href: util.createRestMDLink(itemId, "/xml"),
+          target: "_blank",
+          title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.xml, title: item.title}),
+          "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.xml, title: item.title}),
+          innerHTML: i18n.item.actions.xml
+        },ddli2);
+        var ddli3 = domConstruct.create("li",{},ddul);
+        var jsonNode = domConstruct.create("a",{
+          href: util.createRestMDLink(itemId, "?pretty=true"),
+          target: "_blank",
+          title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.json, title: item.title}),
+          "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.json, title: item.title}),
+          innerHTML: i18n.item.actions.json
+        },ddli3);
+
+        var v = item.sys_metadatatype_s;
+        if (typeof v === "string" && v === "json") {
+          htmlNode.style.visibility = "hidden";
+          xmlNode.style.visibility = "hidden";
+        }
+      }
+      return ddul; // hook to add more items
+    },
+
     _renderLinksDropdown: function(item,links) {
       if (links.length === 0) return;
       var dd = domConstruct.create("div",{
@@ -912,57 +967,24 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
       },
 
 
-     // _renderWorkbenchLinksDropdown: function(item,links) {
-     //      if ( ! Array.isArray(item.services_nst)) return;
-     //      if( item.services_nst.length === 0) return;
-     //      var dd = domConstruct.create("div",{
-     //          "class": "dropdown",
-     //          "style": "display:inline-block;"
-     //      },this.actionsNode);
-     //      var ddbtn = domConstruct.create("a",{
-     //          "class": "dropdown-toggle",
-     //          "href": "#",
-     //          "data-toggle": "dropdown",
-     //          "aria-haspopup": true,
-     //          "aria-expanded": true,
-     //          innerHTML: "Named Links"
-     //      },dd);
-     //      domConstruct.create("span",{
-     //          "class": "caret"
-     //      },ddbtn);
-     //      var ddul = domConstruct.create("ul",{
-     //          "class": "dropdown-menu",
-     //      },dd);
-     //      if (lang.isArray(item.services_nst)){
-     //          array.forEach(item.services_nst, function(u){
-     //              var ddli = domConstruct.create("li",{},ddul);
-     //              domConstruct.create("a",{
-     //                  "class": "small",
-     //                  href: u.url_s,
-     //                  target: "_blank",
-     //                  innerHTML: u.url_type_s
-     //              },ddli);
-     //          });
-     //      }
-     //      this._mitigateDropdownClip(dd,ddul);
-     //  },
+
     _renderCinergiLinks: function(itemId,item) {
           // if categories_cat exists, then these should exist
           if (item.categories_cat) {
 
-              var actionsNode = this.actionsNode;
+              var cinergiNode = this.cinergiNode;
               var uri = "app/prov/templates/Prov.html?source=" + encodeURIComponent(item.fileid);
               var htmlNode = domConstruct.create("a", {
                   href: uri + "&ttl=" + encodeURIComponent(item.title),
                   target: "_blank",
                   innerHTML: "Provenance"
-              }, actionsNode);
+              }, cinergiNode);
               var uri2 = "http://mdeditor.usgin.org/?docId=" + encodeURIComponent(item.fileid);
               var htmlNode = domConstruct.create("a", {
                   href: uri2,
                   target: "_blank",
                   innerHTML: "Edit"
-              }, actionsNode);
+              }, cinergiNode);
               //https://mybinder.org/v2/gh/CINERGI/jupyter-cinergi.git/master?urlpath=%2Fnotebooks%2FCinergiDispatch.ipynb
               var uri3 = "https://"+ "mybinder.org" +
                   "/v2/gh/CINERGI/jupyter-cinergi.git/master?urlpath=%2Fnotebooks%2FCinergiDispatch.ipynb"+
@@ -974,116 +996,14 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
               //     href: uri3,
               //     target: "_blank",
               //     innerHTML: "Workbench Demo"
-              // }, actionsNode);
+              // }, cinergiNode);
 
           }
 
       },
-      _renderWorkbenchLinksDropdown: function(item,
-                                              links) {
-        if (links.length >0 ) {
-            // var uri = "https://mybinder.org/v2/gh/CINERGI/jupyter-cinergi.git/master?urlpath=%2Fnotebooks%2FDispatchTesting%2FCinergiDispatch-UseMetadata.ipynb?documentId="+encodeURIComponent(itemId);
-            //
-            // uri = "http://sua
-            // ve-jupyterhub.com/user/zeppelin-v/notebooks/CinergiDispatch.ipynb?documentId=" +encodeURIComponent(itemId);
-            //
-            // uri = "http://suave-jupyterhub.com/user/zeppelin-v/notebooks/CinergiDispatch.ipynb?documentId=" +encodeURIComponent(itemId);
 
-
-            var dd = domConstruct.create("div", {
-                "class": "dropdown",
-                "style": "display:inline-block;"
-            }, this.actionsNode);
-            var ddbtn = domConstruct.create("a", {
-                "class": "dropdown-toggle",
-                "href": "#",
-                "data-toggle": "dropdown",
-                "aria-haspopup": true,
-                "aria-expanded": true,
-                innerHTML: "Studio"
-            }, dd);
-            domConstruct.create("span", {
-                "class": "caret"
-            }, ddbtn);
-            var ddul = domConstruct.create("ul", {
-                "class": "dropdown-menu",
-            }, dd);
-
-            if (lang.isArray(this.jupyter_hubs.hubs)) {
-                array.forEach(this.jupyter_hubs.hubs, function (hub) {
-                    var ddli = domConstruct.create("li", {}, ddul);
-                    var uri = hub.uri_template.replace("{docId}", encodeURIComponent(item._id));
-                    var divClass = "small";
-                    if (hub.disabled){
-                        divClass = "small disabled";
-                    }
-                    if (lang.isArray(hub.branches)) {
-                        array.forEach(hub.branches, function (branch) {
-
-                            var branchuri = uri.replace("{branch}",branch.branch );
-                            var title  = hub.title.replace("{branch}",branch.title);
-                        domConstruct.create("a", {
-                            "class": "small",
-                            href: branchuri,
-                            target: "_blank",
-                            innerHTML: title
-                        }, ddli);
-                        });
-                    } else {
-                        domConstruct.create("a", {
-                            "class": "small",
-                            href: uri,
-                            target: "_blank",
-                            innerHTML: hub.title
-                        }, ddli);
-                    }
-                });
-            }
-
-
-            // uri = "http://suave-jupyterhub.com/user/zeppelin-v/notebooks/CinergiDispatch.ipynb?documentId=" + encodeURIComponent(item._id);
-            // uriTitle = "suave-jupyterhub.com (local authentication required)"
-            // var ddli2 = domConstruct.create("li", {}, ddul);
-            // domConstruct.create("a", {
-            //     "class": "small",
-            //     href: uri,
-            //     target: "_blank",
-            //     innerHTML: uriTitle
-            // }, ddli2);
-            // var uri = "https://mybinder.org/v2/gh/CINERGI/jupyter-cinergi.git/stable?urlpath=%2Fnotebooks%2FCinergiDispatch.ipynb?documentId=" + encodeURIComponent(item._id);
-            // var uriTitle = "MyBinder-Stable";
-            // var ddli = domConstruct.create("li", {}, ddul);
-            // domConstruct.create("a", {
-            //     "class": "small",
-            //     href: uri,
-            //     target: "_blank",
-            //     innerHTML: uriTitle
-            // }, ddli);
-            // var uri = "https://mybinder.org/v2/gh/CINERGI/jupyter-cinergi.git/master?urlpath=%2Fnotebooks%2FDispatchTesting%2FCinergiDispatch-UseMetadata.ipynb?documentId=" + encodeURIComponent(item._id);
-            // var uriTitle = "MyBinder-Development";
-            // var ddli0 = domConstruct.create("li", {}, ddul);
-            // domConstruct.create("a", {
-            //     "class": "small",
-            //     href: uri,
-            //     target: "_blank",
-            //     innerHTML: uriTitle
-            // }, ddli0);
-            //
-            // uri = "https://suave-jupyter.nautilus.optiputer.net/?documentId=" + encodeURIComponent(item._id);
-            // uriTitle = "Optiputer (google authentication required)"
-            //
-            // var ddli3 = domConstruct.create("li", {}, ddul);
-            // domConstruct.create("a", {
-            //     "class": "small",
-            //     href: uri,
-            //     target: "_blank",
-            //     innerHTML: uriTitle
-            // }, ddli3);
-            this._mitigateDropdownClip(dd, ddul);
-        }
-      },
     _renderSchemaOrg: function (item){
-          var actionsNode = this.actionsNode;
+          var metadataNode = this.metadataNode;
           if (item.sys_metadatatype_s && item.sys_metadatatype_s.startsWith("iso19115") ) {
               var uri3 = "https://search.google.com/structured-data/testing-tool/u/0/#url=" +
                   encodeURIComponent(
@@ -1092,9 +1012,44 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
                   href: uri3,
                   target: "_blank",
                   innerHTML: "Schema.Org"
-              }, actionsNode);
+              }, metadataNode);
           }
       },
+
+
+    _renderCinergiAddToDropdown: function (ddul, item) {
+      if (item.sys_metadatatype_s && item.sys_metadatatype_s.startsWith("iso19115")) {
+        var actionName = "Schema.Org Test"
+
+      var ddli = domConstruct.create("li", {}, ddul);
+      var schemaNode = domConstruct.create("a", {
+        href: "https://search.google.com/structured-data/testing-tool/u/0/#url=" +
+            encodeURIComponent(
+                "http://cinergi.sdsc.edu/geoportal/rest/metadata/item/" + item._id + "/html"),
+        target: "_blank",
+        title: string.substitute(i18n.item.actions.titleFormat, {action: actionName, title: item.title}),
+        "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: actionName, title: item.title}),
+        innerHTML: actionName
+      }, ddli);
+       };
+      if (item.categories_cat) {
+        var ddli2 = domConstruct.create("li", {}, ddul);
+
+        var uri = "app/prov/templates/Prov.html?source=" + encodeURIComponent(item.fileid);
+        var provNode = domConstruct.create("a", {
+          href: uri + "&ttl=" + encodeURIComponent(item.title),
+          target: "_blank",
+          innerHTML: "Provenance"
+        }, ddli2);
+        var ddli3 = domConstruct.create("li", {}, ddul);
+        var uri2 = "http://mdeditor.usgin.org/?docId=" + encodeURIComponent(item.fileid);
+        var editNode = domConstruct.create("a", {
+          href: uri2,
+          target: "_blank",
+          innerHTML: "Edit"
+        }, ddli3);
+      }
+    },
       /*
 
            DVW 2018-80-23 Restore Logic to allow for highlighting of HTML.
@@ -1135,7 +1090,10 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
                   util.setNodeText(this.titleNode,title);
               }
           } else
-          { util.setNodeText(this.titleNode,title);}
+          {
+            util.setNodeText(this.titleNode,title);
+            this.titleNode.href = util.createRestMDLink(item._id, "/html");
+          }
 
 
       },
@@ -1168,7 +1126,7 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
       },
 
     _renderWbLink: function(item) {
-      var actionsNode = this.actionsNode;
+      var jupyterNode = this.jupyterNode;
 
       var link = domConstruct.create("a",{
         // href: href,
@@ -1179,24 +1137,24 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
           var dialog = new JupyterDialog();
           dialog.show(item);
         }
-      }, actionsNode);
+      }, jupyterNode);
 
     },
     _renderItemsSaveStatus: function(item, status) {
-      var collectionsNode = this.collectionsNode;
-      domConstruct.empty(collectionsNode);
-      var btnText = "Save Item";
+      var saveNode = this.saveNode;
+      domConstruct.empty(saveNode);
+      var btnText = "Add to Collection";
       var btnClass ="btn btn-primary  btn-xs"
       var self = this;
 
 
       switch (status) {
         case "saved":
-          btnText = "Saved";
+          btnText = "Added";
           var btnClass ="btn btn-success  btn-xs"
           break;
         default:
-          btnText = "Save";
+          btnText = "Add to Collection";
           var btnClass ="btn btn-primary  btn-xs"
       }
       var link = domConstruct.create("a",{
@@ -1211,7 +1169,7 @@ function(declare, lang, array, string, topic, xhr, request, on, appTopics, domCl
             topic.publish(appTopics.itemSave, {item:item, collection:'default'})
           }
         },
-      }, collectionsNode);
+      }, saveNode);
 
     },
 

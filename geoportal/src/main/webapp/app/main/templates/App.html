@@ -3,7 +3,7 @@
     -->
     <nav class="navbar navbar-inverse">
 
-            <a id="branding" class="navbar-brand" href="#">
+            <a id="branding" class="navbar-brand" href="#startPanel">
                 <img class="navbar-logo" src="images/DataDiscoveryStudioBufferedWhite.png"/>
             </a>
             <!-- <a class="navbar-brand" href="#">${i18n.nav.brand}</a> -->
@@ -11,7 +11,10 @@
 
         <ul class="nav navbar-nav">
             <li class="nav-item show  active">
-                <a class="nav-link" href="#searchPanel" data-toggle="tab">${i18n.nav.search} <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#startPanel" data-toggle="tab">Start<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#searchPanel" data-toggle="tab">${i18n.nav.search} </a>
             </li>
             <!--	    <li class="nav-item">
                       <a class="nav-link" href="#mapPanel" data-toggle="tab">${i18n.nav.map}</a>
@@ -89,6 +92,9 @@
 
     </nav>
     <div class="tab-content">
+        <div id="startPanel" role="tabpanel" class="tab-pane fade in active">
+            <div data-dojo-type="app/main/StartPanel" data-dojo-attach-point="startPanel"></div>
+        </div>
         <div id="searchPanel" role="tabpanel" class="tab-pane fade in active">
             <div data-dojo-type="app/main/SearchPanel" data-dojo-attach-point="searchPanel"></div>
         </div>
@@ -107,7 +113,7 @@
     </div>
     <script>
         $(function () {
-            $('#searchPanel  li:last-child a').tab('show')
+            $('#startPanel  li:last-child a').tab('show')
         })
     </script>
 </div>
