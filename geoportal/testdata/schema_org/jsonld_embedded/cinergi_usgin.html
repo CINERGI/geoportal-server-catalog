@@ -1,0 +1,1272 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css" id="internalStyle">
+    body {
+      font-family: Verdana, Gill, Helvetica, Sans-serif ;
+      font-size: 0.8em;
+      font-weight: 500;
+      color: #000020;
+      background-color: #FFFFFF;
+    }
+    div.itemDescription {
+      margin-right: 2em;
+      margin-bottom: 2em;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    h1.idHeading {
+      color: #008FAF;
+      text-align: center;
+    }
+    h1.gpHeading {
+      color: black;
+    }
+    span.idHeading {
+      color: #007799;
+      font-weight: bold;
+    }
+    .center {
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    img {
+      width: 210px;
+      border-width: 1px;
+      border-style: outset;
+    }
+    img.center {
+      text-align: center;
+      display: block;
+      border-color: #666666;
+    }
+    img.enclosed {
+      width: 60%;
+    }
+    img.gp {
+      width: auto;
+      border-style: none;
+    }
+    .noThumbnail {
+      color: #888888;
+      font-size: 1.2em;
+      text-align: center;
+      width: 210px;
+      height: 140px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+      padding: 3em 3em;
+      position: relative;
+      direction: ltr;
+      left: 50%;
+      right: auto;
+      margin-left: -127px;
+    }
+    .noContent {
+      color: #888888;
+    }
+    div.box {
+      border: thin inset #EEEEEE;
+      margin-left: 1em;
+      padding: 1em;
+    }
+    .box.arcgis {
+      background-color: #F9FFFF;
+    }
+    .box.fgdc {
+      background-color: #F0F5FF;
+    }
+    div.hide {
+      display: none;
+    }
+    div.show {
+      display: block;
+    }
+    span.hide {
+      display: none;
+    }
+    span.show {
+      display: inline-block;
+    }
+    .backToTop a {
+      color: #DDDDDD;
+      font-style: italic;
+    }
+    h2 {
+      font-size: 1.2em;
+    }
+    h2.gp {
+      color: #00709C;
+    }
+    .gpsubtitle {
+      color: black;
+      font-size: 1.2em;
+	  font-weight: normal;
+    }
+    .gptags {
+      color: black;
+      font-size: 0.8em;
+	  font-weight: normal;
+    }
+    .head {
+      font-size: 1.3em;
+    }
+    a:link, a:visited {
+      color: #004457;
+      font-weight: normal;
+      text-decoration: none;
+    }
+    a:link:hover, a:visited:hover {
+      background-color: #FFFFD3;
+    }
+    h2.iso a {
+      color: #007799;
+      font-weight: bold;
+    }
+    h2.fgdc a {
+      color: #004080;
+      font-weight: bold;
+    }
+	h3 {
+		font-size: 1em; 
+		color: #00709C;
+	}
+    .backToTop {
+      color: #AAAAAA;
+      margin-left: 1em;
+    }
+    p.gp {
+      margin-top: .6em;
+      margin-bottom: .6em;
+    }
+    ul .gp {
+      margin-left: -1em;
+    }
+    ul li.iso19139heading {
+      margin-left: -3em;
+	  list-style: none;
+	  font-weight: bold;
+    }
+    dl {
+      margin: 0;
+      padding: 0;
+    }
+    dl.iso {
+      background-color: #F2F9FF;
+    }
+    dl.esri {
+      background-color: #F2FFF9;
+    }
+    dl.subtype {
+      width: 40em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      padding: 0;
+    }
+    dt {
+      margin-left: 0.6em;
+      padding-left: 0.6em;
+      clear: left;
+    }
+    .subtype dt {
+      width: 60%;
+      float: left;
+      margin: 0;
+      padding: 0.5em 0.5em 0 0.75em;
+      border-top: 1px solid #006400;
+      clear: none;
+    }
+    .subtype dt.header {
+      padding: 0.5em 0.5em 0.5em 0;
+      border-top: none;
+    }
+    dd {
+      margin-left: 0.6em;
+      padding-left: 0.6em;
+      clear: left;
+    }
+    .subtype dd {
+      float: left;
+      width: 25%;
+      margin: 0;
+      padding: 0.5em 0.5em 0 0.75em;
+      border-top: 1px solid #006400;
+      clear: none;
+    }
+    .subtype dd.header {
+      padding: 0.5em 0.5em 0.5em 0;
+      border-top: none;
+    }
+    .isoElement {
+      font-variant: small-caps;
+      font-size: 0.9em;
+      font-weight: normal;
+      color: #0000A0;
+    }
+    .esriElement {
+      font-variant: small-caps;
+      font-size: 0.9em;
+      font-weight: normal;
+      color: #006400;
+    }
+   
+    .element {
+      font-variant: small-caps;
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #006400;
+    }
+    unknownElement {
+      font-variant: small-caps;
+      font-size: 0.9em;
+      font-weight: normal;
+      color: #333333;
+    }
+    .sync {
+      color: #006400;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+    .code {
+      font-family: monospace;
+    }
+    pre.wrap {
+      width: 96%;
+      font-family: Verdana, Gill, Helvetica, Sans-serif ;
+      font-size: 1em;
+      margin: 0 0 1em 0.6em;
+      white-space: pre-wrap;       /* css-3 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+    pre.gp {
+      font-family: Courier, Courier New, monospace;
+      line-height: 1.2em;
+      white-space: nowrap;
+    }
+    .gpcode {
+      margin-left:15px;
+      border: 1px dashed #ACC6D8;
+      padding: 10px;
+      background-color:#EEEEEE;
+      height: auto;
+      overflow: scroll; 
+      width: 96%;
+    }
+    pre.gpOld {
+      font-family: Courier, Courier New, monospace;
+      line-height: 1.2em;
+    }
+    tr {
+      vertical-align: top;
+    }
+    th {
+      text-align: left;
+      background: #dddddd;
+      vertical-align: bottom;
+      font-size: 0.8em;
+    }
+    td {
+      background: #EEEEEE;
+      color: black;
+      vertical-align: top;
+      font-size: 0.8em;
+    }
+  </style><style type="text/css" id="datadoi.css">
+    /* 
+    Created on : Feb 18, 2015, 1:07:47 PM
+    Author     : vickiferrini
+    * 
+    smr 2018-05-03 minor updates for use with ISO metadata display
+    * fix comment problems (change // to / * * /)
+    */
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px;
+    text-align: left;
+    }
+    #mapc {
+    width: 320px;
+    height: 320px;
+    z-index: 1;
+    }
+    h1,h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    }
+    /* smr 2018-05-03 make bigger font size */
+    h1 {
+    font-size: 200%;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    background-color: #D5D5D5;
+    }
+    #right-side {
+    float: right;
+    margin-left: 10px;
+    }
+    /* smr 2018-05-03 add */
+    #left-side {
+    float: left;
+    margin-left: 10px;
+    }
+    img {
+    padding-top: 5px;
+    padding-bottom: 12px;
+    }
+    /*div.row:after {
+    content: '';
+    display: block;
+    clear:both;
+    }*/
+    div.row {
+    padding: 10px;
+    position: relative;
+    }
+    
+    div.description {
+    font-size: 90%;
+    margin-left: 150px;
+    }
+    
+    .btn {
+    margin-left: 150px;
+    margin-top: 10px;
+    /* max-width: 275px; */
+    max-width: 200px;
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 5px 15px 5px 15px;
+    text-decoration: none;
+    }
+    .btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+    }
+    
+    div.title {
+    position: absolute;
+    left:10px;
+    top:10px;
+    font-size: 95%;
+    margin-left: 5px;
+    /*     padding: 10px; */
+    font-weight: bold;
+    width: 150px;
+    }
+    
+    #container {
+    position: relative;
+    min-width: 800px;
+    }
+  </style><link rel="stylesheet" href="http://www.marine-geo.org/css/mapv3.css">
+      <link rel="stylesheet" type="text/css" href="http://www.marine-geo.org/inc/jquery-ui-1.10.2.custom/css/smoothness/jquery-ui-1.10.2.custom.min.css" media="all">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><script type="text/javascript">
+	/*  */
+		function hideShow(divID) {
+			var item = document.getElementById(divID);
+			var itemShow = document.getElementById(divID + 'Show');
+			var itemHide = document.getElementById(divID + 'Hide');
+			if (item) {
+				if (item.className == 'hide') {
+					item.className='show';
+					itemShow.className='hide';
+					itemHide.className='show';
+				}
+				else {
+					item.className='hide';
+					itemShow.className='show';
+					itemHide.className='hide';
+				}
+			}
+		}
+	/*  */
+
+
+	</script><script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBhwynlqvaW_25pfNO1P2ME_GZXyS7OQQ0&amp;libraries=drawing" type="text/javascript"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+      <script type="text/javascript" src="http://get.iedadata.org/metadata/iso/basemap_v3.js"></script>
+      <script type="text/javascript" src="http://get.iedadata.org/metadata/iso/doimap.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script type="application/ld+json">
+{
+  "@context": {
+ "@vocab": "http://schema.org/", 
+"datacite": "http://purl.org/spar/datacite/",
+
+                "earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+
+                "geolink": "http://schema.geolink.org/1.0/base/main#",
+
+                "vivo": "http://vivoweb.org/ontology/core#",
+
+                "dcat":"http://www.w3.org/ns/dcat#"
+
+                  },
+ "@id": "http://www.opengis.net/def/nil/OGC/0/missing/2013-04-04T12:00:00Z",
+  "@type": "Dataset",
+  "additionalType": [
+    "geolink:Dataset",
+    "vivo:Dataset"
+  ],
+  "name": "Jamaica MGD 1:130,000 bedrock lithostratigraphy",
+  "citation": "missing (2015-01-14T13:27:59), Jamaica MGD 1:130,000 bedrock lithostratigraphy, http://www.opengis.net/def/nil/OGC/0/missing/2013-04-04T12:00:00Z.",
+  "creator":
+[{
+    "@type":"Role",
+      "roleName": "originator; originatory",
+"creator": {
+    "@type":"Person",
+      "additionalType": "geolink:Person",
+      "name": "missing"
+      }}],
+  "datePublished": "2015-01-14T13:27:59",
+  "description": "The 1:130,000 digital simplified geological map of Jamaica and accessory information was prepared as a collaborative effort of the Mines and Geology Division (the national geological survey agency), the International Centre for Environmental and Nuclear Sciences and the Geography/Geology Department of the University of the West Indies, all based in Kingston, Jamaica. These data-sets are prepared as the national contribution to the OneGeology initiative and were derived from medium- (1:50,000) to local- (1:12,500) scale compilations of geological work conducted between 1950 and 2008. They are provided for informational purposes. Users are able to make a preliminary interpretation of the regional geology of the island. However, for detailed maps (1:50,000) of geology, structure and mineral resources, users may contact the Mines and Geology Division. A fee may apply. The Mines and Geology Division and by extension, the Government of Jamaica, along with other contributing agencies, express gratitude to the British Geological Survey for hosting the national datasets of Jamaica.",
+  "distribution": [
+{
+      "@id": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&",
+    "@type": "DataDownload",
+    "additionalType": "dcat:distribution",
+      "dcat:accessURL": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&",
+      "url": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&",
+      "name": "JAM_MGD_EN_130K_BLS",
+      "description": "Jamaica MGD 1:130,000 bedrock lithostratigraphy. Service Protocol: Jamaica MGD 1:130,000 bedrock lithostratigraphy. ",
+      "fileFormat": ""}
+,
+{
+      "@id": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=JAM_MGD_EN_130K_BLS&format=image/png&STYLE=default",
+    "@type": "DataDownload",
+    "additionalType": "dcat:distribution",
+      "dcat:accessURL": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=JAM_MGD_EN_130K_BLS&format=image/png&STYLE=default",
+      "url": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=JAM_MGD_EN_130K_BLS&format=image/png&STYLE=default",
+      "name": "default (LegendURL)",
+      "description": "Service Protocol: . ",
+      "fileFormat": ""}
+  ],
+  "identifier": 
+ [
+ {
+            "@type": "PropertyValue",
+            "propertyID": "gmd:datasetURI",
+            "value": "urn:http//www.opengis.net/def/nil/OGC/0/missing/2013-04-04T120000Z",
+            "url": "http://www.opengis.net/def/nil/OGC/0/missing/2013-04-04T12:00:00Z"
+}],
+  "includedInDataCatalog": {
+ 
+    "@type":"DataCatalog",
+  "name":"Name of catalog source for record being transformed",
+  "url": "not defined"
+},
+  "keywords": ["OneGeology", "Jamaica", "geology", "bedrock", "lithostratigraphy", "continent@Latin America", "subcontinent@Caribbean", "geographicarea@Jamaica", "serviceprovider@British Geological Survey", "dataprovider@Mines and Geology Division", "DS_TOPIC@geoscientificinformation", "DS_DATE@2014-10-30", "Bedrock", "Survey", "Island", "Mineral Resource", "Scale", "MAPS", "GEOLOGY", "Dataset", "Mine", "Energy and Mining"],
+  "publisher": "publisher not specified",
+  "spatialCoverage": {
+
+    "@type":"Place",
+      "geo":
+        {
+       "@type": "GeoShape",
+          "box": "-78.3703, 17.7029 -76.1825, 18.5212"
+            }}}
+</script></head>
+   <body oncontextmenu="return true">
+      <div xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:res="http://www.esri.com/metadata/res/" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gco="http://www.isotc211.org/2005/gco" class="container-fluid page-header">
+         <h1 class="row">Jamaica MGD 1:130,000 bedrock lithostratigraphy</h1>
+      </div>
+      <div xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:res="http://www.esri.com/metadata/res/" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gco="http://www.isotc211.org/2005/gco" class="container-fluid">
+         <div class="row">
+            <div class="col-sm-2 pull-right">
+               <form id="geoLocations"><input class="geoLocationBox" type="hidden" value="17.7029 -78.3703 18.5212 -76.1825"></form>
+               <div id="mapc"></div>
+            </div>
+            <nav class="col-sm-3" aria-orientation="vertical" id="metadataPanel">
+               <ul class="nav  nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+                  <li>Information Record</li>
+                  <li><a href="#d23066784e256">Resource Identification
+                        Information
+                        </a></li>
+                  <li>Reference System Information</li>
+                  <li style="margin-left:0.5in"><a href="#d23066784e165">Reference System1</a></li>
+                  <li style="margin-left:0.5in"><a href="#d23066784e184">Reference System2</a></li>
+                  <li style="margin-left:0.5in"><a href="#d23066784e202">Reference System3</a></li>
+                  <li style="margin-left:0.5in"><a href="#d23066784e220">Reference System4</a></li>
+                  <li style="margin-left:0.5in"><a href="#d23066784e238">Reference System5</a></li>
+                  <li><a href="#d23066784e1234">Data Quality Information</a></li>
+                  <li><a href="#d23066784e1146">Distribution Information</a></li>
+                  <li><a href="#Metadata_Information">Metadata Information</a></li>
+               </ul>
+            </nav>
+            <div class="col-sm-6" data-spy="scroll" data-target="#metadataPanel" id="panel"><a name="d23066784e256" id="d23066784e256"></a><dt>
+                  <h2>Dataset Identification:</h2>
+               </dt>
+               <div class="panel panel-default">
+                  <dt><span class="element">Resource Abstract:</span></dt>
+                  <dl>
+                     <dd class="wrap">The 1:130,000 digital simplified geological map of Jamaica and accessory information was prepared as a collaborative effort
+                        of the Mines and Geology Division (the national geological survey agency), the International Centre for Environmental and
+                        Nuclear Sciences and the Geography/Geology Department of the University of the West Indies, all based in Kingston, Jamaica.
+                        These data-sets are prepared as the national contribution to the OneGeology initiative and were derived from medium- (1:50,000)
+                        to local- (1:12,500) scale compilations of geological work conducted between 1950 and 2008. They are provided for informational
+                        purposes. Users are able to make a preliminary interpretation of the regional geology of the island. However, for detailed
+                        maps (1:50,000) of geology, structure and mineral resources, users may contact the Mines and Geology Division. A fee may apply.
+                        The Mines and Geology Division and by extension, the Government of Jamaica, along with other contributing agencies, express
+                        gratitude to the British Geological Survey for hosting the national datasets of Jamaica.
+                     </dd>
+                  </dl>
+               </div>
+               <div class="panel panel-default">
+                  <dd>
+                     <dt><span class="element">Citation</span></dt>
+                     <dd>
+                        <dl>
+                           <dt><span class="element">Title</span> Jamaica MGD 1:130,000 bedrock lithostratigraphy
+                           </dt>
+                           <dd>
+                              <dt><span class="element">publication  Date
+                                    </span> 
+                                 2015-01-14T13:27:59
+                              </dt>
+                           </dd>
+                           <dd>
+                              <dt><span class="element">cited responsible party
+                                    -
+                                    originator</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">individual Name</span> missing
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">Contact information</span></dt>
+                                       <dd>
+                                          <dl>
+                                             <dd>
+                                                <dt><span class="element">Telephone</span></dt>
+                                                <dd>
+                                                   <dl>
+                                                      <dt><span class="element">Voice</span> 999-999-9999
+                                                      </dt>
+                                                   </dl>
+                                                </dd>
+                                             </dd>
+                                          </dl>
+                                       </dd>
+                                    </dd>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </dl>
+                     </dd>
+                  </dd>
+               </div>
+               <div class="panel panel-default">
+                  <dt><span class="element">Topic Category:</span> 
+                     geoscientificInformation
+                  </dt>
+               </div>
+               <div class="panel panel-default">
+                  <div class="panel-heading"><a role="button" data-toggle="collapse" data-parent="#kwPanel" href="#kwPanel" aria-expanded="true" aria-controls="kwPanel">
+                        Keywords:
+                        </a></div>
+                  <div class="panel-body collapse in panel panel-default" id="kwPanel">
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords:</span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item">OneGeology</div>
+                           <div class="list-group-item">Jamaica</div>
+                           <div class="list-group-item">geology</div>
+                           <div class="list-group-item">bedrock</div>
+                           <div class="list-group-item">lithostratigraphy</div>
+                           <div class="list-group-item">continent@Latin America</div>
+                           <div class="list-group-item">subcontinent@Caribbean</div>
+                           <div class="list-group-item">geographicarea@Jamaica</div>
+                           <div class="list-group-item">serviceprovider@British Geological Survey</div>
+                           <div class="list-group-item">dataprovider@Mines and Geology Division</div>
+                           <div class="list-group-item">DS_TOPIC@geoscientificinformation</div>
+                           <div class="list-group-item">DS_DATE@2014-10-30</div>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://sweet.jpl.nasa.gov/2.3/realmGeol.owl#Bedrock">Bedrock</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Realm &gt; Geosphere
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://hydro10.sdsc.edu/cinergi_ontology/cinergi.owl#survey">Survey</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Activity &gt; Observation
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://sweet.jpl.nasa.gov/2.3/realmLandCoastal.owl#Island">Island</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Feature &gt; Hydrologic Feature
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://hydro10.sdsc.edu/cinergi_ontology/cinergi.owl#mineral_resources">Mineral Resource</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Feature &gt; Geologic Feature
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://hydro10.sdsc.edu/cinergi_ontology/basic#Scale">Scale</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Property &gt; Measure
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://edamontology.org/topic_0102">MAPS</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Equipment &gt; Instrument
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://www.vocabularyserver.com/usgs/index.php?tema=666&amp;/geology">GEOLOGY</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Organization &gt; Commercial Organization
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://purl.obolibrary.org/obo/IAO_0000100">Dataset</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Resource Type &gt; Data Set
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://purl.obolibrary.org/obo/ENVO_00000076">Mine</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Feature &gt; Environmental Feature
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                     <div class="panel-heading clearfix"><span class="element">Theme keywords (theme): </span></div>
+                     <div class="panel-body">
+                        <div class="list-group col-sm-6">
+                           <div class="list-group-item"><a href="http://viaf.org/viaf/124643677/">Energy and Mining</a></div>
+                        </div>
+                        <div class="pull-right col-sm-5">
+                           <dd>
+                              <dt><span class="element">thesaurus name &gt;</span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="element">Title</span> Virtual International Authority File (VIAF) Corporate Names
+                                    </dt>
+                                    <dd>
+                                       <dt><span class="element">publication  Date
+                                             </span> 
+                                          2017-01-18
+                                       </dt>
+                                    </dd>
+                                    <dt><span class="element">other Citation Details
+                                          </span> Cinergi keyword enhanced at Wed Jan 18 14:02:42 UTC 2017
+                                    </dt>
+                                 </dl>
+                              </dd>
+                           </dd>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="panel panel-default"></div>
+               <div class="panel panel-default"></div>
+               <dt><span class="element">Resource language:</span> 
+                  
+               </dt>
+               <dt><span class="element">Character set encoding of resource:
+                     </span> 
+               </dt>
+               <dt><span class="element">Resource progress code:</span> 
+                  completed
+               </dt>
+               <div class="panel panel-default">
+                  <div class="panel-heading"><span class="element">Resource extent</span></div>
+                  <div class="panel-body">
+                     <dl>
+                        <div class="panel-body panel panel-default">
+                           <div class="panel-heading">  Geographic Extent
+                              
+                           </div>
+                           <div class="panel-body">
+                              <dd>
+                                 <dd>
+                                    <dl>
+                                       <div class="panel panel-default">
+                                          <div class="panel-heading"><span class="element">Geographic Bounding Box</span></div>
+                                          <div class="panel-body">
+                                             <div>
+                                                <dt><span class="element">westBoundLongitude
+                                                      </span> -78.3703
+                                                </dt>
+                                                <dt><span class="element">eastBoundLongitude
+                                                      </span> -76.1825
+                                                </dt>
+                                                <dt><span class="element">northBoundLatitude
+                                                      </span> 18.5212
+                                                </dt>
+                                                <dt><span class="element">southBoundLatitude
+                                                      </span> 17.7029
+                                                </dt>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </dl>
+                                 </dd>
+                              </dd>
+                           </div>
+                        </div>
+                     </dl>
+                  </div>
+               </div>
+               <dd>
+                  <dt><span class="element">point of contact
+                        -
+                        pointOfContact</span></dt>
+                  <dd>
+                     <dl>
+                        <dt><span class="element">individual Name</span> Mr Clinton G. THOMPSON
+                        </dt>
+                        <dt><span class="element">organisation Name
+                              </span> Ministry of Science, Technology, Energy and Mining
+                        </dt>
+                        <dt><span class="element">position Name</span> Commissioner of Mines
+                        </dt>
+                        <dd>
+                           <dt><span class="element">Contact information</span></dt>
+                           <dd>
+                              <dl>
+                                 <dd>
+                                    <dt><span class="element">Telephone</span></dt>
+                                    <dd>
+                                       <dl>
+                                          <dt><span class="element">Voice</span> (876) 927-1936 (to 40)
+                                          </dt>
+                                          <dt><span class="element">Fax</span> (876) 977-1204
+                                          </dt>
+                                       </dl>
+                                    </dd>
+                                 </dd>
+                                 <dd>
+                                    <dt><span class="element">Address</span></dt>
+                                    <dd>
+                                       <dl>
+                                          <dt>Hope Gardens, Kingston 6, Jamaica<span class="element">,</span> Kingston<span class="element">,</span> <span class="element">, </span>P.O. Box 141<span class="element">
+                                                Country</span> Jamaica
+                                          </dt>
+                                          <dt><span class="element">electronic Mail Address</span> <a href="mailto:metadata@usgin.org">metadata@usgin.org</a></dt>
+                                       </dl>
+                                    </dd>
+                                 </dd>
+                                 <dd>
+                                    <dt><span class="element">Linkage for online resource</span></dt>
+                                    <dd>
+                                       <dl>
+                                          <dt><span class="element">URL:</span> <a target="viewer" href="http://www.mgd.gov.jm/">http://www.mgd.gov.jm/</a></dt>
+                                       </dl>
+                                    </dd>
+                                 </dd>
+                              </dl>
+                           </dd>
+                        </dd>
+                     </dl>
+                  </dd>
+               </dd><a class="top" href="#Top">Back to top:</a><a name="d23066784e165" id="d23066784e165"></a><dt>
+                  <h2>reference system
+                     1
+                  </h2>
+               </dt>
+               <dl>
+                  <dd>
+                     <dt><span class="element">Reference System Identifier</span></dt>
+                     <dl>
+                        <dd>
+                           <dt><span class="element">Identifier string:</span> CRS:84
+                           </dt>
+                        </dd>
+                     </dl>
+                     <dl>
+                        <dd></dd>
+                     </dl>
+                  </dd>
+               </dl><a class="top" href="#Top">Back to top</a><a name="d23066784e184" id="d23066784e184"></a><dt>
+                  <h2>reference system
+                     2
+                  </h2>
+               </dt>
+               <dl>
+                  <dd>
+                     <dt><span class="element">Reference System Identifier</span></dt>
+                     <dl>
+                        <dd>
+                           <dt><span class="element">Identifier string:</span> EPSG:3448
+                           </dt>
+                        </dd>
+                     </dl>
+                     <dl>
+                        <dd></dd>
+                     </dl>
+                  </dd>
+               </dl><a class="top" href="#Top">Back to top</a><a name="d23066784e202" id="d23066784e202"></a><dt>
+                  <h2>reference system
+                     3
+                  </h2>
+               </dt>
+               <dl>
+                  <dd>
+                     <dt><span class="element">Reference System Identifier</span></dt>
+                     <dl>
+                        <dd>
+                           <dt><span class="element">Identifier string:</span> EPSG:3857
+                           </dt>
+                        </dd>
+                     </dl>
+                     <dl>
+                        <dd></dd>
+                     </dl>
+                  </dd>
+               </dl><a class="top" href="#Top">Back to top</a><a name="d23066784e220" id="d23066784e220"></a><dt>
+                  <h2>reference system
+                     4
+                  </h2>
+               </dt>
+               <dl>
+                  <dd>
+                     <dt><span class="element">Reference System Identifier</span></dt>
+                     <dl>
+                        <dd>
+                           <dt><span class="element">Identifier string:</span> EPSG:4326
+                           </dt>
+                        </dd>
+                     </dl>
+                     <dl>
+                        <dd></dd>
+                     </dl>
+                  </dd>
+               </dl><a class="top" href="#Top">Back to top</a><a name="d23066784e238" id="d23066784e238"></a><dt>
+                  <h2>reference system
+                     5
+                  </h2>
+               </dt>
+               <dl>
+                  <dd>
+                     <dt><span class="element">Reference System Identifier</span></dt>
+                     <dl>
+                        <dd>
+                           <dt><span class="element">Identifier string:</span> EPSG:900913
+                           </dt>
+                        </dd>
+                     </dl>
+                     <dl>
+                        <dd></dd>
+                     </dl>
+                  </dd>
+               </dl><a class="top" href="#Top">Back to top</a><div class="panel panel-default">
+                  <h2 class="panel-heading"><a role="button" data-toggle="collapse" href="#dataQualityPanel" aria-expanded="false" aria-controls="dataQualityPanel" name="d23066784e1234" id="d23066784e1234">
+                        
+                        Data quality information
+                        
+                        </a></h2>
+                  <div class="panel-body collapse" id="dataQualityPanel">
+                     <div class="panel panel-default">
+                        <div class="panel-heading"><span class="element">Scope of quality information</span></div>
+                        <div class="panel-body">
+                           <dt><span class="element">scope level</span> 
+                              dataset
+                           </dt>
+                        </div>
+                     </div>
+                     <dd>
+                        <dt><span class="element">Resource lineage description</span></dt>
+                        <dd>
+                           <dl>
+                              <dt><span class="element">Lineage statement</span></dt>
+                              <dl>
+                                 <dd class="wrap"></dd>
+                              </dl>
+                           </dl>
+                        </dd>
+                     </dd>
+                  </div>
+               </div>
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                     <h2 class="panel-header"><a data-toggle="collapse" data-parent="#resourceDistBody" href="#resourceDistBody" aria-expanded="true" aria-controls="resourceDistBody"><span id="d23066784e1146">
+                              
+                              
+                              Resource distribution information
+                              
+                              </span></a></h2>
+                     <dd>
+                        <dt><span class="element">Format</span></dt>
+                        <dd>
+                           <dl>
+                              <dt><span class="element">Format name</span> 
+                              </dt>
+                              <dt><span class="element">Format version</span> 
+                              </dt>
+                           </dl>
+                        </dd>
+                     </dd>
+                  </div>
+                  <div class="panel-body collapse in" id="resourceDistBody">
+                     <div class="list-group">
+                        <div class="list-group-item">
+                           <dt><span class="element">Digital Transfer Options</span></dt>
+                           <dd>
+                              <dl>
+                                 <dd>
+                                    <dt><span class="element">Linkage for online resource</span></dt>
+                                    <dd>
+                                       <dl>
+                                          <dt><span class="element">name</span> JAM_MGD_EN_130K_BLS
+                                          </dt>
+                                          <dt><span class="element">URL:</span> <a target="viewer" href="http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&amp;">http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&amp;</a></dt>
+                                          <dt><span class="element">protocol</span> OGC:WMS-1.1.1-http-get-map
+                                          </dt>
+                                          <dt><span class="element">Description</span> Jamaica MGD 1:130,000 bedrock lithostratigraphy
+                                          </dt>
+                                       </dl>
+                                    </dd>
+                                 </dd>
+                                 <dd>
+                                    <dt><span class="element">Linkage for online resource</span></dt>
+                                    <dd>
+                                       <dl>
+                                          <dt><span class="element">name</span> default (LegendURL)
+                                          </dt>
+                                          <dt><span class="element">URL:</span> <a target="viewer" href="http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=JAM_MGD_EN_130K_BLS&amp;format=image/png&amp;STYLE=default">http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=JAM_MGD_EN_130K_BLS&amp;format=image/png&amp;STYLE=default</a></dt>
+                                          <dt><span class="element">protocol</span> image/png
+                                          </dt>
+                                          <dt><span class="element">Description</span> 
+                                          </dt>
+                                       </dl>
+                                    </dd>
+                                 </dd>
+                              </dl>
+                           </dd>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                     <h2 class="panel-title"><a name="Metadata_Information" id="Metadata_Information" role="button" data-toggle="collapse" href="#mdInfoPanelBody" aria-expanded="false" aria-controls="mdInfoPanelBody">
+                           
+                           
+                           
+                           Metadata Information
+                           
+                           </a></h2>
+                  </div>
+                  <div class="panel-body collapse in" id="mdInfoPanelBody">
+                     <dd>
+                        <dt><span class="element">Metadata data stamp:
+                              </span> 2015-01-14T13:30:12
+                        </dt>
+                        
+                        <dd>
+                           <dt><span class="element">Resource Maintenance Information</span></dt>
+                           <dd>
+                              <dl>
+                                 <dt><span class="element">maintenance or update frequency:</span> 
+                                    IRREGULAR
+                                 </dt>
+                                 <dt><span class="element">notes:</span> This metadata record has been processed by the iso-19115-to-usgin-19115-data XSLT to ensure that all mandatory content for
+                                    USGIN profile has been added.2013-11-04T12:00:00
+                                 </dt>
+                              </dl>
+                           </dd>
+                        </dd>
+                        
+                        <dd>
+                           <dt><span class="element">Metadata contact
+                                 -
+                                 pointOfContact</span></dt>
+                           <dd>
+                              <dl>
+                                 <dt><span class="element">individual Name</span> Mr Clinton G. THOMPSON
+                                 </dt>
+                                 <dt><span class="element">organisation Name
+                                       </span> Ministry of Science, Technology, Energy and Mining
+                                 </dt>
+                                 <dt><span class="element">position Name</span> Commissioner of Mines
+                                 </dt>
+                                 <dd>
+                                    <dt><span class="element">Contact information</span></dt>
+                                    <dd>
+                                       <dl>
+                                          <dd>
+                                             <dt><span class="element">Telephone</span></dt>
+                                             <dd>
+                                                <dl>
+                                                   <dt><span class="element">Voice</span> (876) 927-1936 (to 40)
+                                                   </dt>
+                                                   <dt><span class="element">Fax</span> (876) 977-1204
+                                                   </dt>
+                                                </dl>
+                                             </dd>
+                                          </dd>
+                                          <dd>
+                                             <dt><span class="element">Address</span></dt>
+                                             <dd>
+                                                <dl>
+                                                   <dt>Hope Gardens, Kingston 6, Jamaica<span class="element">,</span> Kingston<span class="element">,</span> <span class="element">, </span>P.O. Box 141<span class="element">
+                                                         Country</span> Jamaica
+                                                   </dt>
+                                                   <dt><span class="element">electronic Mail Address</span> <a href="mailto:metadata@usgin.org">metadata@usgin.org</a></dt>
+                                                </dl>
+                                             </dd>
+                                          </dd>
+                                          <dd>
+                                             <dt><span class="element">Linkage for online resource</span></dt>
+                                             <dd>
+                                                <dl>
+                                                   <dt><span class="element">URL:</span> <a target="viewer" href="http://www.mgd.gov.jm/">http://www.mgd.gov.jm/</a></dt>
+                                                </dl>
+                                             </dd>
+                                          </dd>
+                                       </dl>
+                                    </dd>
+                                 </dd>
+                              </dl>
+                           </dd>
+                        </dd>
+                        <dt><span class="element">Metadata scope code</span> 
+                           dataset
+                        </dt>
+                        <dt><span class="element">Metadata hierarchy level name:
+                              </span> Missing
+                        </dt>
+                        <dt><span class="element">Metadata language</span> 
+                           eng
+                        </dt>
+                        <dt><span class="element">Metadata character set encoding:
+                              </span> 
+                           utf8
+                        </dt>
+                        <dt><span class="element">Metadata standard for this record:
+                              </span> ISO-USGIN
+                        </dt>
+                        <dt><span class="element">standard version:
+                              </span> 1.2
+                        </dt>
+                        <dt><span class="element">Metadata record identifier:
+                              </span> 08d5b1c2-77d8-4264-b3cb-ac6297849207
+                        </dt>
+                        <dt><span class="element">URI for dataset described:
+                              &gt;</span> http://www.opengis.net/def/nil/OGC/0/missing/2013-04-04T12:00:00Z
+                        </dt>
+                     </dd>
+                  </div>
+               </div>
+               <div>
+                  <h3>Metadata record format is ISO19139-2 XML (MI_Metadata)</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

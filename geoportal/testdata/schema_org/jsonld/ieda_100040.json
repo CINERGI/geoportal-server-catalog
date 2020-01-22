@@ -1,0 +1,64 @@
+{
+  "@context": {
+ "@vocab": "http://schema.org/", 
+"datacite": "http://purl.org/spar/datacite/",
+
+                "earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+
+                "geolink": "http://schema.geolink.org/1.0/base/main#",
+
+                "vivo": "http://vivoweb.org/ontology/core#",
+
+                "dcat":"http://www.w3.org/ns/dcat#"
+
+                  },
+ "@id": "urn:10.1594/IEDA/100004",
+  "@type": "Dataset",
+  "additionalType": [
+    "geolink:Dataset",
+    "vivo:Dataset"
+  ],
+  "name": "Gakkel Ridge basalt melt inclusion and mineral chemistry",
+  "citation": "(2011-03-25), Gakkel Ridge basalt melt inclusion and mineral chemistry, urn:10.1594/IEDA/100004.",
+  "creator":
+[],
+  "datePublished": "2011-03-25",
+  "description": "Analyses of volatile, major, and trace elements for a suite of glasses and melt inclusions from the 85 degrees E segment of the ultra-slow spreading Gakkel Ridge.",
+  "distribution": [
+{
+      "@id": "http://www.earthchem.org/library/browse/view?id=124",
+    "@type": "DataDownload",
+    "additionalType": "dcat:distribution",
+      "dcat:accessURL": "http://www.earthchem.org/library/browse/view?id=124",
+      "url": "http://www.earthchem.org/library/browse/view?id=124",
+      "name": "URL",
+      "description": "Link Function: information"}
+  ],
+  "identifier": 
+ [
+],
+  "includedInDataCatalog": {
+ 
+    "@type":"DataCatalog",
+  "name":"Name of catalog source for record being transformed",
+  "url": "not defined"
+},
+  "keywords": ["Geochemistry", "volatiles", "ultra-slow spreading ridges mantle", "melting", "CO2 fluxes", "Ridge related", "application/vnd.ms-excel", "Analysis", "Mineral", "Basalt", "Geochemistry", "Trace Element", "Chemistry", "Geochemistry", "Ridge",
+"Gakkel Ridge Arctic Ocean"],
+  "license": {
+     "@type": "DigitalDocument","name": "MD_LegalConstraints",
+        "description": "useConstraints: license.    otherConstraints: https://creativecommons.org/licenses/by/3.0/us/.   otherConstraints: Creative Commons Attribution-NonCommercial-Share Alike 3.0 United States [CC BY-NC-SA 3.0].   "},
+  "publisher": "publisher not specified",
+  "spatialCoverage": [
+{
+
+    "@type":"Place",
+      "geo":
+        {
+       "@type": "GeoShape",
+          "box": "85.1788, 85.5945 85.5817, 85.6263"
+            }},
+            {
+
+    "@type":"Place",
+       "alternateName": "Gakkel Ridge Arctic Ocean"}]}

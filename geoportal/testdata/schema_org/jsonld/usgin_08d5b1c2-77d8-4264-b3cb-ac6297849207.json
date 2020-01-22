@@ -1,0 +1,78 @@
+{
+  "@context": {
+ "@vocab": "http://schema.org/", 
+"datacite": "http://purl.org/spar/datacite/",
+
+                "earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+
+                "geolink": "http://schema.geolink.org/1.0/base/main#",
+
+                "vivo": "http://vivoweb.org/ontology/core#",
+
+                "dcat":"http://www.w3.org/ns/dcat#"
+
+                  },
+ "@id": "http://www.opengis.net/def/nil/OGC/0/missing/2013-04-04T12:00:00Z",
+  "@type": "Dataset",
+  "additionalType": [
+    "geolink:Dataset",
+    "vivo:Dataset"
+  ],
+  "name": "Jamaica MGD 1:130,000 bedrock lithostratigraphy",
+  "citation": "missing (2015-01-14T13:27:59), Jamaica MGD 1:130,000 bedrock lithostratigraphy, http://www.opengis.net/def/nil/OGC/0/missing/2013-04-04T12:00:00Z.",
+  "creator":
+[{
+    "@type":"Role",
+      "roleName": "originator; originatory",
+"creator": {
+    "@type":"Person",
+      "additionalType": "geolink:Person",
+      "name": "missing"
+      }}],
+  "datePublished": "2015-01-14T13:27:59",
+  "description": "The 1:130,000 digital simplified geological map of Jamaica and accessory information was prepared as a collaborative effort of the Mines and Geology Division (the national geological survey agency), the International Centre for Environmental and Nuclear Sciences and the Geography/Geology Department of the University of the West Indies, all based in Kingston, Jamaica. These data-sets are prepared as the national contribution to the OneGeology initiative and were derived from medium- (1:50,000) to local- (1:12,500) scale compilations of geological work conducted between 1950 and 2008. They are provided for informational purposes. Users are able to make a preliminary interpretation of the regional geology of the island. However, for detailed maps (1:50,000) of geology, structure and mineral resources, users may contact the Mines and Geology Division. A fee may apply. The Mines and Geology Division and by extension, the Government of Jamaica, along with other contributing agencies, express gratitude to the British Geological Survey for hosting the national datasets of Jamaica.",
+  "distribution": [
+{
+      "@id": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&",
+    "@type": "DataDownload",
+    "additionalType": "dcat:distribution",
+      "dcat:accessURL": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&",
+      "url": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&",
+      "name": "JAM_MGD_EN_130K_BLS",
+      "description": "Jamaica MGD 1:130,000 bedrock lithostratigraphy. Service Protocol: Jamaica MGD 1:130,000 bedrock lithostratigraphy. ",
+      "fileFormat": ""}
+,
+{
+      "@id": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=JAM_MGD_EN_130K_BLS&format=image/png&STYLE=default",
+    "@type": "DataDownload",
+    "additionalType": "dcat:distribution",
+      "dcat:accessURL": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=JAM_MGD_EN_130K_BLS&format=image/png&STYLE=default",
+      "url": "http://ogc.bgs.ac.uk/cgi-bin/BGS_MGD_Bedrock_Geology/ows?language=eng&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=JAM_MGD_EN_130K_BLS&format=image/png&STYLE=default",
+      "name": "default (LegendURL)",
+      "description": "Service Protocol: . ",
+      "fileFormat": ""}
+  ],
+  "identifier": 
+ [
+ {
+            "@type": "PropertyValue",
+            "propertyID": "gmd:datasetURI",
+            "value": "urn:http//www.opengis.net/def/nil/OGC/0/missing/2013-04-04T120000Z",
+            "url": "http://www.opengis.net/def/nil/OGC/0/missing/2013-04-04T12:00:00Z"
+}],
+  "includedInDataCatalog": {
+ 
+    "@type":"DataCatalog",
+  "name":"Name of catalog source for record being transformed",
+  "url": "not defined"
+},
+  "keywords": ["OneGeology", "Jamaica", "geology", "bedrock", "lithostratigraphy", "continent@Latin America", "subcontinent@Caribbean", "geographicarea@Jamaica", "serviceprovider@British Geological Survey", "dataprovider@Mines and Geology Division", "DS_TOPIC@geoscientificinformation", "DS_DATE@2014-10-30", "Bedrock", "Survey", "Island", "Mineral Resource", "Scale", "MAPS", "GEOLOGY", "Dataset", "Mine", "Energy and Mining"],
+  "publisher": "publisher not specified",
+  "spatialCoverage": {
+
+    "@type":"Place",
+      "geo":
+        {
+       "@type": "GeoShape",
+          "box": "-78.3703, 17.7029 -76.1825, 18.5212"
+            }}}
