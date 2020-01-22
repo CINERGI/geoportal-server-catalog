@@ -12,12 +12,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+load("classpath:metadata/js/JsonEvaluatorBase.js");
+load("classpath:metadata/js/JsonEvaluatorFor_Dataset.js");
 
+J._metadataTypes = {
+  "JSON-LD Dataset": {
+    key: "JSON-LD Dataset",
+    evaluator: J.evaluators.dataset,
+    //interrogationXPath: "/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString[text()='Earthcube CINERGI Metadata Pipeline']",
+    interrogationPath: "@type:Dataset",
+    //identifier: "http://www.isotc211.org/2005/gmi",
+    identifier: "JSON-LD_Dataset",
+    //detailsXslt: "metadata/details/iso-details-alternate/ISO19139ToHTMLwMap.xsl",
+//      xsdLocation: "https://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd",
+//     schematronXslt: null
+  },
+}
 function evaluateSuppliedJson(mdoc) {
   print("JsonEvaluator::evaluateSuppliedJson");
   var item = JSON.parse(mdoc.getSuppliedJson());
   item._extra = "extra"
   mdoc.setSuppliedJson(JSON.stringify(item));
+
+  mdoc.setEvaluatedJson(JSON.stringify(item)); // change when evaluation happens
+  print("JsonEvaluator::evaluateSuppliedJson exit");
 }
 
 
