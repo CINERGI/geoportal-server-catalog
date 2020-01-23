@@ -1,0 +1,139 @@
+{
+  "alternateName" : "gov.noaa.ncdc:C00199",
+  "creator" : [
+    {
+      "name" : "DOC/NOAA/NWS/NDBC > National Data Buoy Center, National Weather Service, NOAA, U.S. Department of Commerce",
+      "@type" : "Organization"
+    }
+  ],
+  "temporalCoverage" : "1957-01-01/2012-04-01",
+  "name" : "Mariners Weather Log",
+  "description" : "The Mariners Weather Log (MWL) is a publication containing articles, news and information about marine weather events and phenomena, worldwide environmental impact concerns, climatology studies, storms at sea, and weather forecasting. The MWL is dedicated to the NWS Voluntary Observing Ship (VOS) Program, Port Meteorological Officers (PMOs), cooperating ships officers, and their vessels. Through the various articles, mariners and other interested individuals are kept abreast of the most current operational uses of marine weather and oceanographic data. There are also articles concerning general meteorology and oceanography. The marine weather review included in the magazine contains a smooth log and sometimes a rough log. The smooth log (complete with cyclone tracks, climatological data from U.S. Ocean Weather Station \"Hotel\" and buoys, and gale and wave tables) is a definitive report on normal monthly weather systems, the primary storms that affected marine areas, and ship casualties for recent months. The rough log, when published, is a preliminary account of the weather for recent months that are not covered in the smooth log. Also included in the magazine is a special hurricane section as well as a section dealing with current projects and relevant scientific/meteorological occurrences. The archive holds a subset of these publications.",
+  "distribution" : [
+    {
+      "url" : "https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.ncdc:C00199",
+      "description" : "General information and access links for the dataset.",
+      "disambiguatingDescription" : "information (HTTPS)",
+      "@type" : "DataDownload"
+    },
+    {
+      "url" : "https://www.ncdc.noaa.gov/webartis",
+      "description" : "Search WebARTIS--collection MARLOG--for more detail about available data in the physical archives.",
+      "disambiguatingDescription" : "search (HTTPS)",
+      "@type" : "DataDownload"
+    },
+    {
+      "url" : "https://www.ncei.noaa.gov/contact",
+      "description" : "NCEI provides customers with information and data from the NCEI archive. To order NCEI products and services contact the customer support team.",
+      "disambiguatingDescription" : "offlineAccess (HTTPS)",
+      "@type" : "DataDownload"
+    },
+    {
+      "url" : "http://www.vos.noaa.gov/mwl.shtml",
+      "description" : "Archive collection ends in 2012. Digital Copies of the newest publications are available from the National Data Buoy Center (1998 to present)",
+      "disambiguatingDescription" : "download (HTTP)",
+      "@type" : "DataDownload"
+    },
+    {
+      "url" : "https://www.lib.noaa.gov/",
+      "description" : "Publications produced prior to 1998 can be acquired from the NOAA Central Library.",
+      "disambiguatingDescription" : "download (HTTPS)",
+      "@type" : "DataDownload"
+    }
+  ],
+  "image" : {
+    "contentUrl" : "https://www1.ncdc.noaa.gov/pub/data/metadata/images/C00199_MARLOG.jpg",
+    "caption" : "Sample publication cover",
+    "url" : "https://www1.ncdc.noaa.gov/pub/data/metadata/images/C00199_MARLOG.jpg",
+    "@type" : "ImageObject"
+  },
+  "datePublished" : "1957",
+  "keywords" : "Atmospheric - Surface - Air Temperature,Atmospheric - Surface - Precipitation,Atmospheric - Surface - Wind Speed And Direction,Atmospheric - Upper-air - Cloud Properties,Earth Science > Atmosphere > Air Quality > Visibility,Earth Science > Atmosphere > Altitude > Barometric Altitude,Earth Science > Atmosphere > Atmospheric Pressure,Earth Science > Atmosphere > Atmospheric Pressure > Anticyclones/Cyclones,Earth Science > Atmosphere > Atmospheric Pressure > Planetary/Rossby Waves,Earth Science > Atmosphere > Atmospheric Pressure > Pressure Anomalies,Earth Science > Atmosphere > Atmospheric Pressure > Pressure Thickness,Earth Science > Atmosphere > Atmospheric Pressure > Sea Level Pressure,Earth Science > Atmosphere > Atmospheric Temperature > Surface Temperature > Air Temperature,Earth Science > Atmosphere > Atmospheric Temperature > Surface Temperature > Temperature Anomalies,Earth Science > Atmosphere > Atmospheric Water Vapor > Water Vapor Indicators > Humidity,Earth Science > Atmosphere > Atmospheric Winds > Surface Winds,Earth Science > Atmosphere > Clouds > Cloud Properties > Cloud Frequency,Earth Science > Atmosphere > Precipitation > Precipitation Amount,Earth Science > Atmosphere > Weather Events > Rain Storms,Earth Science > Atmosphere > Weather Events > Tropical Cyclones,Earth Science > Human Dimensions > Natural Hazards > Tropical Cyclones > Hurricanes,Earth Science > Human Dimensions > Natural Hazards > Tropical Cyclones > Typhoons,Earth Science > Oceans > Ocean Waves > Swells,Earth Science > Oceans > Ocean Waves > Wave Height,Earth Science > Oceans > Ocean Winds > Surface Winds",
+  "identifier" : [
+    {
+      "value" : "gov.noaa.ncdc:C00199",
+      "propertyID" : "NCEI Dataset Identifier",
+      "@type" : "PropertyValue"
+    },
+    {
+      "value" : "NCEI WebARTIS: MARLOG",
+      "propertyID" : "alternate identifier",
+      "@type" : "PropertyValue"
+    }
+  ],
+  "spatialCoverage" : [
+    {
+      "geo" : {
+        "box" : "-90.0 -180.0 90.0 180.0",
+        "@type" : "GeoShape"
+      },
+      "name" : "geographic bounding box",
+      "@type" : "Place"
+    },
+    {
+      "name" : "Geographic Region > Global Ocean",
+      "@type" : "Place"
+    }
+  ],
+  "@context" : "http://schema.org",
+  "url" : "https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.ncdc:C00199",
+  "publisher" : {
+    "subOrganization" : [
+      {
+        "name" : "National Oceanic and Atmospheric Administration",
+        "@type" : "Organization"
+      }
+    ],
+    "contactPoint" : [
+      {
+        "faxNumber" : "+1-301-713-3300",
+        "email" : "NCEI.Info@noaa.gov",
+        "telephone" : "+1-301-713-3277",
+        "hoursAvailable" : {
+          "dayOfWeek" : [
+            "http://purl.org/goodrelations/v1/#Monday",
+            "http://purl.org/goodrelations/v1/#Tuesday",
+            "http://purl.org/goodrelations/v1/#Wednesday",
+            "http://purl.org/goodrelations/v1/#Thursday",
+            "http://purl.org/goodrelations/v1/#Friday"
+          ],
+          "@type" : "OpeningHoursSpecification"
+        },
+        "contactType" : "customer service",
+        "availableLanguage" : "English",
+        "@type" : "ContactPoint"
+      },
+      {
+        "faxNumber" : "+1-301-713-3300",
+        "email" : "NCEI.Info@noaa.gov",
+        "telephone" : "+1-301-713-3277",
+        "hoursAvailable" : {
+          "dayOfWeek" : [
+            "http://purl.org/goodrelations/v1/#Monday",
+            "http://purl.org/goodrelations/v1/#Tuesday",
+            "http://purl.org/goodrelations/v1/#Wednesday",
+            "http://purl.org/goodrelations/v1/#Thursday",
+            "http://purl.org/goodrelations/v1/#Friday"
+          ],
+          "@type" : "OpeningHoursSpecification"
+        },
+        "contactType" : "technical support",
+        "availableLanguage" : "English",
+        "@type" : "ContactPoint"
+      }
+    ],
+    "url" : "https://www.ncei.noaa.gov/",
+    "name" : "NOAA National Centers for Environmental Information (NCEI)",
+    "address" : {
+      "streetAddress" : "Federal Building, 151 Patton Avenue",
+      "addressCountry" : "US",
+      "addressLocality" : "Asheville",
+      "postalCode" : "28801-5001",
+      "addressRegion" : "NC",
+      "@type" : "PostalAddress"
+    },
+    "@type" : "Organization"
+  },
+  "@type" : "Dataset",
+  "dateCreated" : "1957"
+}

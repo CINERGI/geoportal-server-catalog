@@ -14,16 +14,15 @@
  */
 
 var J = {
-    
+  JSONPATH: Java.type("com.jayway.jsonpath.JsonPath"),
+  JSONCONF: Java.type("com.jayway.jsonpath.Configuration"),
+  JSONCONFOPT: Java.type("com.jayway.jsonpath.Option"),
   DateUtil: Java.type("com.esri.geoportal.base.util.DateUtil"),
   Val: Java.type("com.esri.geoportal.base.util.Val"),
 
   DateRegEx00:  new RegExp('\-00$'), // YearMonth match YYYY-MM-00
   DateRegEx0000:  new RegExp('\-00\-00$'), // Year Only match YYYY-00-00
 
-  XPATH_NODE: javax.xml.xpath.XPathConstants.NODE,
-  XPATH_NODESET: javax.xml.xpath.XPathConstants.NODESET,
-  XPATH_STRING: javax.xml.xpath.XPathConstants.STRING,
 
   evaluators: {},
 
@@ -231,11 +230,11 @@ var J = {
       return value
   },
 
-  evalCode: function(task,obj,contextNode,name,xpathExpression) {
-    if (this.hasText(task,contextNode,xpathExpression+"/@codeListValue")) {
-      this.evalProp(task,obj,contextNode,name,xpathExpression+"/@codeListValue");
+  evalCode: function(task,obj,contextNode,name,jsonpathExpression) {
+    if (this.hasText(task,contextNode,jsonpathExpression+"/@codeListValue")) {
+      this.evalProp(task,obj,contextNode,name,jsonpathExpression+"/@codeListValue");
     } else {
-      this.evalProp(task,obj,contextNode,name,xpathExpression);
+      this.evalProp(task,obj,contextNode,name,jsonpathExpression);
     }
   },
 
@@ -246,16 +245,16 @@ var J = {
   evalDates: function(task,obj,contextNode,name,xpathExpression) {
     this.evalProps(task,obj,contextNode,name,xpathExpression,{dataType:"IsoDateTime"});
   },
-
-  evalProp: function(task,obj,contextNode,name,xpathExpression,options) {
+// check
+  evalProp: function(task,obj,contextNode,name,jsonpathExpression,options) {
     if (!contextNode) return;
-    this.writeProp(obj,name,this.getString(task,contextNode,xpathExpression),options);
+    this.writeProp(obj,name,this.getString(task,contextNode,jsonpathExpression),options);
   },
-
-  evalProps: function(task,obj,contextNode,name,xpathExpression,options) {
+// check
+  evalProps: function(task,obj,contextNode,name,jsonpathExpression,options) {
     if (!contextNode) return;
     var self = this;
-    this.forEachNode(task,contextNode,xpathExpression,function(node){
+    this.forEachNode(task,contextNode,jsonpathExpression,function(node){
       self.writeMultiProp(obj,name,self.getNodeText(node),options);
     });
   },
@@ -278,30 +277,54 @@ var J = {
     });
   },
 
-  forEachNode: function(task,contextNode,xpathExpression,callback) {
-    var i, r, nl = task.xpath.evaluate(xpathExpression,contextNode,this.XPATH_NODESET);
-    if (nl) {
-      for (i=0;i<nl.getLength();i++) {
-        r = callback(nl.item(i));
+  // check
+  forEachNode: function(task,contextNode,jsonpathExpression,callback) {
+    var i, r, nl = task.jpath.using(task.jconf).parse(contextNode).read(jsonpathExpression);
+    //print (nl);
+    if (nl && (typeof nl === "string")) {
+      for (i=0;i<nl.length;i++) {
+        r = callback(nl[i]);
         if (r === "break") return;
       }
     }
   },
 
-  getNode: function(task,contextNode,xpathExpression) {
-    return task.xpath.evaluate(xpathExpression,contextNode,this.XPATH_NODE);
+// check
+  getNode: function(task,contextNode,jsonpathExpression) {
+      return task.jpath.using(task.jconf).parse(contextNode).read(jsonpathExpression);
   },
-  
+// check
   getNodeText: function(node) {
     var v;
     if (typeof node !== "undefined" && node !== null) {
-      if (node.getNodeType() === 1) {
-        v = node.getTextContent();
+      if (!Array.isArray(node)) {
+        v = node;
         if (typeof v === "string") {
           v = this.Val.trim(v);
+        } else {
+
+// print (typeof node);
+// print (node.values);
+          v="";
+          //  node is really a java hashmap. Ignore the JSHINT
+          for (var k in node){
+            // if (node.hasOwnProperty(k)){
+              v = v + node[k];
+            // }
+
+          }
         }
       } else {
-        v = node.getNodeValue();
+        print ("array");
+        if (node.length > 0 ) {
+          v = "";
+          for (var i = 0; i<node.length; i++ ) {
+
+            v = v + node[i];
+          }
+        }
+
+
       }
       if (typeof v === "string") {
         return v;
@@ -309,9 +332,9 @@ var J = {
     }
     return null;
   },
-
-  getString: function(task,contextNode,xpathExpression) {
-    return this.getNodeText(this.getNode(task,contextNode,xpathExpression));
+// check
+  getString: function(task,contextNode,jsonpathExpression) {
+    return this.getNodeText(this.getNode(task,contextNode,jsonpathExpression));
   },
 
   hasNode: function(task,contextNode,xpathExpression) {
@@ -353,7 +376,7 @@ var J = {
     }
     return result;
   },
-
+// check
   writeMultiProp: function(obj,name,value,options) {
     value = this.checkValue(value,name,options);
     if (typeof value === "undefined" || value === null) return;
@@ -367,7 +390,7 @@ var J = {
       obj[name] = [v,value];
     }
   },
-
+// check
   writeProp: function(obj,name,value,options) {
     value = this.checkValue(value,name,options);
     if (typeof value === "undefined" || value === null) return;

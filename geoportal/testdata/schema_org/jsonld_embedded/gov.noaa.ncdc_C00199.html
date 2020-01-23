@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mariners Weather Log</title>
+
+<meta name="Description" content="Mariners Weather Log (format: HTML)">
+<meta name="DC.description" content="Mariners Weather Log (format: HTML)">
+
+<meta name="DC.title" lang="en" content="Mariners Weather Log">
+<meta name="DCTERMS.modified" scheme="W3CDTF" content="2018-11-05">
+<meta name="keywords" content="Anemometers,Atmospheric - Surface - Air Temperature,Atmospheric - Surface - Precipitation,Atmospheric - Surface - Wind Speed And Direction,Atmospheric - Upper-air - Cloud Properties,Buoys,DOC/NOAA/NESDIS/NCDC > National Climatic Data Center, NESDIS, NOAA, U.S. Department of Commerce,DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce,Earth Science > Atmosphere > Air Quality > Visibility,Earth Science > Atmosphere > Altitude > Barometric Altitude,Earth Science > Atmosphere > Atmospheric Pressure,Earth Science > Atmosphere > Atmospheric Pressure > Anticyclones/Cyclones,Earth Science > Atmosphere > Atmospheric Pressure > Planetary/Rossby Waves,Earth Science > Atmosphere > Atmospheric Pressure > Pressure Anomalies,Earth Science > Atmosphere > Atmospheric Pressure > Pressure Thickness,Earth Science > Atmosphere > Atmospheric Pressure > Sea Level Pressure,Earth Science > Atmosphere > Atmospheric Temperature > Surface Temperature > Air Temperature,Earth Science > Atmosphere > Atmospheric Temperature > Surface Temperature > Temperature Anomalies,Earth Science > Atmosphere > Atmospheric Water Vapor > Water Vapor Indicators > Humidity,Earth Science > Atmosphere > Atmospheric Winds > Surface Winds,Earth Science > Atmosphere > Clouds > Cloud Properties > Cloud Frequency,Earth Science > Atmosphere > Precipitation > Precipitation Amount,Earth Science > Atmosphere > Weather Events > Rain Storms,Earth Science > Atmosphere > Weather Events > Tropical Cyclones,Earth Science > Human Dimensions > Natural Hazards > Tropical Cyclones > Hurricanes,Earth Science > Human Dimensions > Natural Hazards > Tropical Cyclones > Typhoons,Earth Science > Oceans > Ocean Waves > Swells,Earth Science > Oceans > Ocean Waves > Wave Height,Earth Science > Oceans > Ocean Winds > Surface Winds,Geographic Region > Global Ocean,Rain Gauges,Ships,Thermometers,VOSCLIM > Voluntary Observing Ship (VOS) Climate Project,Vertical Location > Sea Surface,Visual Observations"/>
+
+<meta name="robots" content="index,nofollow">
+
+
+<meta name="author" content="National Centers for Environmental Information (NCEI)">
+<meta name="application-name" content="">
+<link rel="shortcut icon" href="/Images/favicon.ico">
+<link rel="apple-touch-icon" sizes="144x144" href="/css/apps/iso/images/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/css/apps/iso/images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/css/apps/iso/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/css/apps/iso/images/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" href="/css/apps/iso/images/apple-touch-icon.png">
+<meta name="msapplication-tooltip" content="">
+<meta name="msapplication-task" content="name=NCEI;action-uri=https://www.ncei.noaa.gov/;icon-uri=https://www.nodc.noaa.gov/Images/favicon.ico">
+<meta name="msapplication-TileColor" content="#007EC6">
+<meta name="msapplication-TileImage" content="/css/apps/iso/images/apple-touch-icon-144.png">
+<meta name="verify-v1" content="DjxBYfR0oM2KSNJl6i2BbxfTcXOGUnbglkT0QQj5KtI=">
+<link href="/css/apps/iso/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" media="all" href="/css/apps/iso/css/reset.css">
+<link rel="stylesheet" type="text/css" media="all" href="/css/apps/iso/css/application.css">
+<link rel="stylesheet" type="text/css" media="all" href="/css/apps/iso/css/metadata-display.css">
+<link rel="stylesheet" type="text/css" media="screen and (max-width: 659px)" href="/css/apps/iso/css/layout_320.css">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 660px) and (max-width: 1023px)" href="/css/apps/iso/css/layout_640.css">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 1024px)" href="/css/apps/iso/css/layout_1024.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp;client=gme-noaa&amp;channel=NOAA.NESDIS.NCDC.METADATA"></script><script type="text/javascript" src="/scripts/apps/iso/lib/html5.min.js"></script><script type="text/javascript" src="/scripts/apps/iso/application.js"></script><script src="/scripts/apps/iso/lib/jquery-3.2.1.min.js"></script><script src="/scripts/apps/iso/lib/jquery-ui.min.js"></script><script src="/scripts/apps/iso/metadata-display.js"></script>
+
+<script type="text/javascript">
+var mapCoordinates = [90.0,-90.0,180.0,-180.0];
+</script>
+<script id="_fed_an_ua_tag" type="text/javascript" src="/scripts/federated-analytics.js?agency=DOC&amp;subagency=NOAA&pua=UA-42101633-1"></script>
+
+<script type="application/ld+json">
+{
+   "alternateName" : "gov.noaa.ncdc:C00199",
+   "creator" : [
+      {
+         "name" : "DOC/NOAA/NWS/NDBC > National Data Buoy Center, National Weather Service, NOAA, U.S. Department of Commerce",
+         "@type" : "Organization"
+      }
+   ],
+   "temporalCoverage" : "1957-01-01/2012-04-01",
+   "name" : "Mariners Weather Log",
+   "description" : "The Mariners Weather Log (MWL) is a publication containing articles, news and information about marine weather events and phenomena, worldwide environmental impact concerns, climatology studies, storms at sea, and weather forecasting. The MWL is dedicated to the NWS Voluntary Observing Ship (VOS) Program, Port Meteorological Officers (PMOs), cooperating ships officers, and their vessels. Through the various articles, mariners and other interested individuals are kept abreast of the most current operational uses of marine weather and oceanographic data. There are also articles concerning general meteorology and oceanography. The marine weather review included in the magazine contains a smooth log and sometimes a rough log. The smooth log (complete with cyclone tracks, climatological data from U.S. Ocean Weather Station \"Hotel\" and buoys, and gale and wave tables) is a definitive report on normal monthly weather systems, the primary storms that affected marine areas, and ship casualties for recent months. The rough log, when published, is a preliminary account of the weather for recent months that are not covered in the smooth log. Also included in the magazine is a special hurricane section as well as a section dealing with current projects and relevant scientific/meteorological occurrences. The archive holds a subset of these publications.",
+   "distribution" : [
+      {
+         "url" : "https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.ncdc:C00199",
+         "description" : "General information and access links for the dataset.",
+         "disambiguatingDescription" : "information (HTTPS)",
+         "@type" : "DataDownload"
+      },
+      {
+         "url" : "https://www.ncdc.noaa.gov/webartis",
+         "description" : "Search WebARTIS--collection MARLOG--for more detail about available data in the physical archives.",
+         "disambiguatingDescription" : "search (HTTPS)",
+         "@type" : "DataDownload"
+      },
+      {
+         "url" : "https://www.ncei.noaa.gov/contact",
+         "description" : "NCEI provides customers with information and data from the NCEI archive. To order NCEI products and services contact the customer support team.",
+         "disambiguatingDescription" : "offlineAccess (HTTPS)",
+         "@type" : "DataDownload"
+      },
+      {
+         "url" : "http://www.vos.noaa.gov/mwl.shtml",
+         "description" : "Archive collection ends in 2012. Digital Copies of the newest publications are available from the National Data Buoy Center (1998 to present)",
+         "disambiguatingDescription" : "download (HTTP)",
+         "@type" : "DataDownload"
+      },
+      {
+         "url" : "https://www.lib.noaa.gov/",
+         "description" : "Publications produced prior to 1998 can be acquired from the NOAA Central Library.",
+         "disambiguatingDescription" : "download (HTTPS)",
+         "@type" : "DataDownload"
+      }
+   ],
+   "image" : {
+      "contentUrl" : "https://www1.ncdc.noaa.gov/pub/data/metadata/images/C00199_MARLOG.jpg",
+      "caption" : "Sample publication cover",
+      "url" : "https://www1.ncdc.noaa.gov/pub/data/metadata/images/C00199_MARLOG.jpg",
+      "@type" : "ImageObject"
+   },
+   "datePublished" : "1957",
+   "keywords" : "Atmospheric - Surface - Air Temperature,Atmospheric - Surface - Precipitation,Atmospheric - Surface - Wind Speed And Direction,Atmospheric - Upper-air - Cloud Properties,Earth Science > Atmosphere > Air Quality > Visibility,Earth Science > Atmosphere > Altitude > Barometric Altitude,Earth Science > Atmosphere > Atmospheric Pressure,Earth Science > Atmosphere > Atmospheric Pressure > Anticyclones/Cyclones,Earth Science > Atmosphere > Atmospheric Pressure > Planetary/Rossby Waves,Earth Science > Atmosphere > Atmospheric Pressure > Pressure Anomalies,Earth Science > Atmosphere > Atmospheric Pressure > Pressure Thickness,Earth Science > Atmosphere > Atmospheric Pressure > Sea Level Pressure,Earth Science > Atmosphere > Atmospheric Temperature > Surface Temperature > Air Temperature,Earth Science > Atmosphere > Atmospheric Temperature > Surface Temperature > Temperature Anomalies,Earth Science > Atmosphere > Atmospheric Water Vapor > Water Vapor Indicators > Humidity,Earth Science > Atmosphere > Atmospheric Winds > Surface Winds,Earth Science > Atmosphere > Clouds > Cloud Properties > Cloud Frequency,Earth Science > Atmosphere > Precipitation > Precipitation Amount,Earth Science > Atmosphere > Weather Events > Rain Storms,Earth Science > Atmosphere > Weather Events > Tropical Cyclones,Earth Science > Human Dimensions > Natural Hazards > Tropical Cyclones > Hurricanes,Earth Science > Human Dimensions > Natural Hazards > Tropical Cyclones > Typhoons,Earth Science > Oceans > Ocean Waves > Swells,Earth Science > Oceans > Ocean Waves > Wave Height,Earth Science > Oceans > Ocean Winds > Surface Winds",
+   "identifier" : [
+      {
+         "value" : "gov.noaa.ncdc:C00199",
+         "propertyID" : "NCEI Dataset Identifier",
+         "@type" : "PropertyValue"
+      },
+      {
+         "value" : "NCEI WebARTIS: MARLOG",
+         "propertyID" : "alternate identifier",
+         "@type" : "PropertyValue"
+      }
+   ],
+   "spatialCoverage" : [
+      {
+         "geo" : {
+            "box" : "-90.0 -180.0 90.0 180.0",
+            "@type" : "GeoShape"
+         },
+         "name" : "geographic bounding box",
+         "@type" : "Place"
+      },
+      {
+         "name" : "Geographic Region > Global Ocean",
+         "@type" : "Place"
+      }
+   ],
+   "@context" : "http://schema.org",
+   "url" : "https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.ncdc:C00199",
+   "publisher" : {
+      "subOrganization" : [
+         {
+            "name" : "National Oceanic and Atmospheric Administration",
+            "@type" : "Organization"
+         }
+      ],
+      "contactPoint" : [
+         {
+            "faxNumber" : "+1-301-713-3300",
+            "email" : "NCEI.Info@noaa.gov",
+            "telephone" : "+1-301-713-3277",
+            "hoursAvailable" : {
+               "dayOfWeek" : [
+                  "http://purl.org/goodrelations/v1/#Monday",
+                  "http://purl.org/goodrelations/v1/#Tuesday",
+                  "http://purl.org/goodrelations/v1/#Wednesday",
+                  "http://purl.org/goodrelations/v1/#Thursday",
+                  "http://purl.org/goodrelations/v1/#Friday"
+               ],
+               "@type" : "OpeningHoursSpecification"
+            },
+            "contactType" : "customer service",
+            "availableLanguage" : "English",
+            "@type" : "ContactPoint"
+         },
+         {
+            "faxNumber" : "+1-301-713-3300",
+            "email" : "NCEI.Info@noaa.gov",
+            "telephone" : "+1-301-713-3277",
+            "hoursAvailable" : {
+               "dayOfWeek" : [
+                  "http://purl.org/goodrelations/v1/#Monday",
+                  "http://purl.org/goodrelations/v1/#Tuesday",
+                  "http://purl.org/goodrelations/v1/#Wednesday",
+                  "http://purl.org/goodrelations/v1/#Thursday",
+                  "http://purl.org/goodrelations/v1/#Friday"
+               ],
+               "@type" : "OpeningHoursSpecification"
+            },
+            "contactType" : "technical support",
+            "availableLanguage" : "English",
+            "@type" : "ContactPoint"
+         }
+      ],
+      "url" : "https://www.ncei.noaa.gov/",
+      "name" : "NOAA National Centers for Environmental Information (NCEI)",
+      "address" : {
+         "streetAddress" : "Federal Building, 151 Patton Avenue",
+         "addressCountry" : "US",
+         "addressLocality" : "Asheville",
+         "postalCode" : "28801-5001",
+         "addressRegion" : "NC",
+         "@type" : "PostalAddress"
+      },
+      "@type" : "Organization"
+   },
+   "@type" : "Dataset",
+   "dateCreated" : "1957"
+}
+</script>
+</head>
+<body><div id="main" class="container-fluid">
+<header><div id="header" class="clearfix" role="banner"><div class="inset clearfix">
+<a class="noaalink" href="http://www.noaa.gov/" title="National Oceanic and Atmospheric Administration"></a><div class="title"><a href="https://www.ncei.noaa.gov/"><img src="/media/images/common/nceilogo2.png" alt="National Centers for Environmental Information" /></a></div><a href="http://www.commerce.gov/" id="headDOC" title="Visit the U.S. Department of Commerce website"></a>
+</div></div>
+<div class="element-invisible">
+<a class="element-invisible element-focusable" href="#main-content">Skip to main content</a><br><a class="element-invisible element-focusable" href="#site-search">Skip to site search</a>
+</div>
+<nav id="nav" class="clearfix" role="navigation"><div class="inset">
+<ul class="mainNav" role="menubar">
+<li role="menuitem"><a href="//www.nodc.noaa.gov/" title="Home">Home</a></li>
+<li role="menuitem"><a href="//www.nodc.noaa.gov/access/" title="Access Data">Access Data</a></li>
+<li role="menuitem"><a href="//www.nodc.noaa.gov/submit/" title="Submit Data">Submit Data</a></li>
+<li role="menuitem"><a href="//www.nodc.noaa.gov/outreach/" title="Public Outreach">Public Outreach</a></li>
+<li role="menuitem"><a href="//www.nodc.noaa.gov/about/" title="About">About</a></li>
+</ul>
+<div class="navSearchForm" role="search"><form name="sitesearchform" method="get" action="//www.nodc.noaa.gov/archivesearch/rest/find/document">
+<a id="site-search"></a><fieldset>
+<input type="hidden" name="f" value="searchPage" />
+<legend>Search for data at the National Centers for Environmental Information</legend>
+<label for="sitesearch">Search Field:</label>
+<input type="text" name="searchText" class="searchtext inputbox" id="sitesearch" value="Search NCEI Data" maxlength="50" tabindex="1"><label for="sitesearchbutton">Search button:</label><input type="submit" class="submitbutton" id="sitesearchbutton" value="Search" tabindex="2">
+</fieldset>
+</form></div>
+</div></nav></header><div id="breadcrumbs">
+<!-- xviewsmenu start -->
+<!-- 
+  <div class="viewsmenu">
+    <i>View as:</i> HTML
+  </div>
+-->
+<!-- xviewsmenu end -->
+<div class="inset">
+<a href="//www.ncei.noaa.gov/" title="National Centers for Environmental Information">Home</a> &nbsp;&gt; &nbsp;
+<a href="/">Data</a> &nbsp;
+ &nbsp;&gt; &nbsp; <a href="https://www.nodc.noaa.gov/archivesearch/">Metadata</a> &nbsp;&gt; &nbsp; gov.noaa.ncdc:C00199
+</div>
+</div>
+<div id="content" class="clearfix reset"><div class="inset">
+<h1>Mariners Weather Log</h1>
+<h2>MWL</h2>
+<div class="row">
+<div class="col-xs-4 col-sm-3 col-md-2">
+<a href="https://www1.ncdc.noaa.gov/pub/data/metadata/images/C00199_MARLOG.jpg"><img alt="browse graphic" class=" img-responsive " src="https://www1.ncdc.noaa.gov/pub/data/metadata/images/C00199_MARLOG.jpg"></a><small>Sample publication cover</small>
+</div>
+<div class="col-md-7">The Mariners Weather Log (MWL) is a publication containing articles, news and information about marine weather events and phenomena, worldwide environmental impact concerns, climatology studies, storms at sea, and weather forecasting. The MWL is dedicated to the NWS Voluntary Observing Ship (VOS) Program, Port Meteorological Officers (PMOs), cooperating ships officers, and their vessels. Through the various articles, mariners and other interested individuals are kept abreast of the most current operational uses of marine weather and oceanographic data. There are also articles concerning general meteorology and oceanography. The marine weather review included in the magazine contains a smooth log and sometimes a rough log. The smooth log (complete with cyclone tracks, climatological data from U.S. Ocean Weather Station "Hotel" and buoys, and gale and wave tables) is a definitive report on normal monthly weather systems, the primary storms that affected marine areas, and ship casualties for recent months. The rough log, when published, is a preliminary account of the weather for recent months that are not covered in the smooth log. Also included in the magazine is a special hurricane section as well as a section dealing with current projects and relevant scientific/meteorological occurrences. The archive holds a subset of these publications.</div>
+<div class="col-md-3"><div class="panel-group" id="UseAndID" aria-multiselectable="true" role="tablist">
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="citation"><span class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#UseAndID" href="#" aria-expanded="false" aria-controls="collapseCitation" onClick="$('#collapseIdentifiers').slideUp();$('#collapse19115-2').slideUp();$('#collapseCitation').slideToggle();"> Dataset Citation </a></span></div>
+<div id="collapseCitation" class="panel-collapse collapse" role="tabpanel" aria-labelledby="citation"><div class="panel-body"><ul class="unstyled"><li>Cite this dataset when used as a source.</li></ul></div></div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="identifiers"><span class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#UseAndID" href="#" aria-expanded="false" aria-controls="collapseIdentifiers" onClick="$('#collapseCitation').slideUp();$('#collapse19115-2').slideUp();$('#collapseIdentifiers').slideToggle();"> Dataset Identifiers </a></span></div>
+<div id="collapseIdentifiers" class="panel-collapse collapse" role="tabpanel" aria-labelledby="identifiers"><div class="panel-body"><ul>
+<li>NCEI WebARTIS: MARLOG</li>
+<li>gov.noaa.ncdc:C00199</li>
+</ul></div></div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="19115-2"><span class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#UseAndID" href="#" aria-expanded="false" aria-controls="collapse19115-2" onClick="$('#collapseIdentifiers').slideUp();$('#collapseCitation').slideUp();$('#collapse19115-2').slideToggle();"> ISO 19115-2 Metadata </a></span></div>
+<div id="collapse19115-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="19115-2"><div class="panel-body"><span>C00199<div class="viewsmenu">
+<a href="/cgi-bin/iso?id=gov.noaa.ncdc:C00199;view=iso" target="_blank">Full Text</a> &middot; <a href="/cgi-bin/iso?id=gov.noaa.ncdc:C00199;view=xml;responseType=text/xml" target="_blank">XML</a>
+
+</div>
+</span></div></div>
+</div>
+</div></div>
+</div>
+<div class="row"><div class="col-md-12 ui-tabs" id="tabs">
+<ul class="nav nav-tabs ui-tabs-nav" role="tablist">
+<li role="presentation"><a href="#OnlineAccess" aria-controls="OnlineAccess" role="tab" data-toggle="tab"><span class="ui-tabs-tab">Access</span></a></li>
+<li role="presentation"><a href="#Coverage" aria-controls="coverage" role="tab" data-toggle="tab" id="coverageTab"><span class="ui-tabs-tab">Time &amp; Location</span></a></li>
+<li role="presentation"><a href="#Documentation" aria-controls="documentation" role="tab" data-toggle="tab"><span class="ui-tabs-tab">Documentation</span></a></li>
+<li role="presentation"><a href="#Description" aria-controls="description" role="tab" data-toggle="tab"><span class="ui-tabs-tab">Description</span></a></li>
+<li role="presentation"><a href="#Credit" aria-controls="credit" role="tab" data-toggle="tab"><span class="ui-tabs-tab">Credit</span></a></li>
+<li role="presentation"><a href="#keywords" aria-controls="keywords" role="tab" data-toggle="tab"><span class="ui-tabs-tab">Keywords</span></a></li>
+<li role="presentation"><a href="#Constraints" aria-controls="constraints" role="tab" data-toggle="tab"><span class="ui-tabs-tab">Constraints</span></a></li>
+<li role="presentation"><a href="#Lineage" aria-controls="lineage" role="tab" data-toggle="tab">Lineage</a></li>
+</ul>
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active ui-tabs-panel" id="OnlineAccess"><div class="row"><div class="col-md-12"><div class="col-md-12"><div class="row"><table class="table table-condensed table-bordered">
+<thead><tr><th colspan="2"></th></tr></thead>
+<tr>
+<td class="col-md-3">Search Data</td>
+<td><ul class="unstyled"><li>
+<a href="https://www.ncdc.noaa.gov/webartis" target="_blank">NCEI WebARTIS</a> <span class="italics">(search)</span><br>Search WebARTIS--collection MARLOG--for more detail about available data in the physical archives.</li></ul></td>
+</tr>
+<tr>
+<td class="col-md-3">Download Data</td>
+<td><ul class="unstyled">
+<li>
+<a href="http://www.vos.noaa.gov/mwl.shtml" target="_blank">NDBC Mariners Weather Log</a> <span class="italics">(download)</span><br>Archive collection ends in 2012. Digital Copies of the newest publications are available from the National Data Buoy Center (1998 to present)</li>
+<li>
+<a href="https://www.lib.noaa.gov/" target="_blank">NOAA Central Library</a> <span class="italics">(download)</span><br>Publications produced prior to 1998 can be acquired from the NOAA Central Library.</li>
+</ul></td>
+</tr>
+<tr>
+<td class="col-md-3">Other Access</td>
+<td><ul class="unstyled"><li>
+<a href="https://www.ncei.noaa.gov/contact" target="_blank">NCEI Customer Support</a> <span class="italics">(offlineAccess)</span><br>NCEI provides customers with information and data from the NCEI archive. To order NCEI products and services contact the customer support team.</li></ul></td>
+</tr>
+<tr>
+<td class="col-md-3">Distribution Formats</td>
+<td><ul>
+<li>Paper Publication</li>
+<li>PDF</li>
+</ul></td>
+</tr>
+<tr>
+<td class="col-md-3">Distributor</td>
+<td>Customer Engagement Branch<br><span class="italics">DOC/NOAA/NESDIS/NCEI &gt; National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce</span><br>1-828-271-4800<br><a href="mailto:ncei.orders@noaa.gov?Mariners%20Weather%20Log%20)">ncei.orders@noaa.gov</a>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Dataset  Point of Contact </td>
+<td>Customer Engagement Branch<br><span class="italics">DOC/NOAA/NESDIS/NCEI &gt; National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce<br></span>1-828-271-4800<br><a href="mailto:ncei.orders@noaa.gov?Mariners%20Weather%20Log">ncei.orders@noaa.gov</a><br>
+</td>
+</tr>
+</table></div></div></div></div></div>
+<div role="tabpanel" class="tab-pane ui-tabs-panel" id="Coverage"><div class="row"><div class="col-md-12"><table class="table table-condensed table-bordered">
+<thead><tr><th colspan="2"></th></tr></thead>
+<tr>
+<td class="col-md-3">Time Period</td>
+<td>1957-01-01 to 2012-04-01</td>
+</tr>
+<tr>
+<td class="col-md-3">Spatial Bounding Box Coordinates</td>
+<td>
+<div class="col-md-2 bounding-box">
+<strong>N: </strong>90.0</div>
+<div class="col-md-2 bounding-box">
+<strong>S: </strong>-90.0</div>
+<div class="col-md-2 bounding-box">
+<strong>E: </strong>180.0</div>
+<div class="col-md-2 bounding-box">
+<strong>W: </strong>-180.0</div>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Spatial Coverage Map</td>
+<td><div id="map-canvas"></div></td>
+</tr>
+</table></div></div></div>
+<div role="tabpanel" class="tab-pane ui-tabs-panel" id="Documentation"><div class="row"><div class="col-md-12"><table class="table table-condensed table-bordered">
+<thead><tr><th colspan="2"></th></tr></thead>
+<tr>
+<td class="col-md-3">Dataset Information</td>
+<td><ul class="unstyled"><li>
+<a href="http://www.vos.noaa.gov/mwl.shtml" target="_blank">Mariners Weather Log</a><br>The most recent editions of the Mariners Weather Log are available from the National Data Buoy Center</li></ul></td>
+</tr>
+<tr>
+<td class="col-md-3">General Documentation</td>
+<td><ul class="unstyled"><li>
+<a href="https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.ncdc:C00199" target="_blank">Mariners Weather Log Landing Page</a><br>General information and access links for the dataset.</li></ul></td>
+</tr>
+</table></div></div></div>
+<div role="tabpanel" class="tab-pane ui-tabs-panel" id="Description"><div class="row"><div class="col-md-12"><table class="table table-condensed table-bordered">
+<thead><tr><th colspan="2"></th></tr></thead>
+<tr>
+<td class="col-md-3">Publication Dates</td>
+<td><ul class="unstyled"><li>publication: 1957</li></ul></td>
+</tr>
+<tr>
+<td class="col-md-3">Data Presentation Form</td>
+<td> Hardcopy image - image archived in analog format <br>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Dataset Progress Status</td>
+<td>Historical archive - data has been stored in an offline storage facility</td>
+</tr>
+<tr>
+<td class="col-md-3">Data Update Frequency</td>
+<td> Not planned </td>
+</tr>
+<tr>
+<td class="col-md-3">Purpose</td>
+<td>NWS Voluntary Observing Ship (VOS) Program, Port Meteorological Officers (PMOs), cooperating ships officers, their vessels and others interested in marine weather and climate studies can use this to stay up-to-date on current marine news phenomena.</td>
+</tr>
+<tr>
+<td class="col-md-3">Use Limitations</td>
+<td><ul class="unstyled"><li>Users interested in the Mariners Weather Log are encouraged to go to the National Data Buoy Center Website or the NOAA Central Library for the newest publications.</li></ul></td>
+</tr>
+</table></div></div></div>
+<div role="tabpanel" class="tab-pane ui-tabs-panel" id="Credit"><div class="row"><div class="col-md-12"><table class="table table-condensed table-bordered">
+<thead><tr><th colspan="2"></th></tr></thead>
+<tr>
+<td class="col-md-3"> Dataset Citation </td>
+<td><ul class="unstyled"><li>Cite this dataset when used as a source.</li></ul></td>
+</tr>
+<tr>
+<td class="col-md-3"> Cited Authors </td>
+<td><ul class="unstyled"><li><span class="italics">DOC/NOAA/NWS/NDBC &gt; National Data Buoy Center, National Weather Service, NOAA, U.S. Department of Commerce</span></li></ul></td>
+</tr>
+<tr>
+<td class="col-md-3"> Originators </td>
+<td><ul class="unstyled"><li><span class="italics">DOC/NOAA/NWS/NDBC &gt; National Data Buoy Center, National Weather Service, NOAA, U.S. Department of Commerce</span></li></ul></td>
+</tr>
+<tr>
+<td class="col-md-3">Publishers</td>
+<td><ul class="unstyled"><li><span class="italics">DOC/NOAA/NESDIS/NCEI &gt; National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce</span></li></ul></td>
+</tr>
+</table></div></div></div>
+<div role="tabpanel" class="tab-pane ui-tabs-panel" id="keywords"><div class="row"><div class="col-md-12"><table class="table table-condensed table-bordered">
+<thead><tr><th colspan="2"></th></tr></thead>
+<tr>
+<td class="col-md-3">Theme keywords</td>
+<td>
+<span class="italics">Global Change Master Directory (GCMD) Science Keywords</span><ul>
+<li>Earth Science &gt; Atmosphere &gt; Weather Events &gt; Tropical Cyclones</li>
+<li>Earth Science &gt; Human Dimensions &gt; Natural Hazards &gt; Tropical Cyclones &gt; Hurricanes</li>
+<li>Earth Science &gt; Human Dimensions &gt; Natural Hazards &gt; Tropical Cyclones &gt; Typhoons</li>
+<li>Earth Science &gt; Atmosphere &gt; Weather Events &gt; Rain Storms</li>
+<li>Earth Science &gt; Atmosphere &gt; Altitude &gt; Barometric Altitude</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Pressure &gt; Anticyclones/Cyclones</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Pressure</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Pressure &gt; Planetary/Rossby Waves</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Pressure &gt; Pressure Anomalies</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Pressure &gt; Pressure Thickness</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Pressure &gt; Sea Level Pressure</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Temperature &gt; Surface Temperature &gt; Air Temperature</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Temperature &gt; Surface Temperature &gt; Temperature Anomalies</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Water Vapor &gt; Water Vapor Indicators &gt; Humidity</li>
+<li>Earth Science &gt; Atmosphere &gt; Atmospheric Winds &gt; Surface Winds</li>
+<li>Earth Science &gt; Atmosphere &gt; Clouds &gt; Cloud Properties &gt; Cloud Frequency</li>
+<li>Earth Science &gt; Atmosphere &gt; Precipitation &gt; Precipitation Amount</li>
+<li>Earth Science &gt; Oceans &gt; Ocean Winds &gt; Surface Winds</li>
+<li>Earth Science &gt; Oceans &gt; Ocean Waves &gt; Swells</li>
+<li>Earth Science &gt; Oceans &gt; Ocean Waves &gt; Wave Height</li>
+<li>Earth Science &gt; Atmosphere &gt; Air Quality &gt; Visibility</li>
+</ul>
+<span class="italics">Global Climate Observing System (GCOS) Essential Climate Variables (ECVs)</span><ul>
+<li>Atmospheric - Surface - Wind Speed And Direction</li>
+<li>Atmospheric - Surface - Air Temperature</li>
+<li>Atmospheric - Surface - Precipitation</li>
+<li>Atmospheric - Upper-air - Cloud Properties</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Data Center keywords</td>
+<td>
+<span class="italics">Global Change Master Directory (GCMD) Data Center Keywords</span><ul>
+<li>DOC/NOAA/NESDIS/NCDC &gt; National Climatic Data Center, NESDIS, NOAA, U.S. Department of Commerce</li>
+<li>DOC/NOAA/NESDIS/NCEI &gt; National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Platform keywords</td>
+<td>
+<span class="italics">Global Change Master Directory (GCMD) Platform Keywords</span><ul>
+<li>Buoys</li>
+<li>Ships</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Instrument keywords</td>
+<td>
+<span class="italics">Global Change Master Directory (GCMD) Instrument Keywords</span><ul>
+<li>Thermometers</li>
+<li>Rain Gauges</li>
+<li>Anemometers</li>
+<li>Visual Observations</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Place keywords</td>
+<td>
+<span class="italics">Global Change Master Directory (GCMD) Location Keywords</span><ul><li>Geographic Region &gt; Global Ocean</li></ul>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Project keywords</td>
+<td>
+<span class="italics">Global Change Master Directory (GCMD) Project Keywords</span><ul><li>VOSCLIM &gt; Voluntary Observing Ship (VOS) Climate Project</li></ul>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Stratum keywords</td>
+<td>
+<span class="italics">Global Change Master Directory (GCMD) Location Keywords</span><ul><li>Vertical Location &gt; Sea Surface</li></ul>
+</td>
+</tr>
+</table></div></div></div>
+<div role="tabpanel" class="tab-pane ui-tabs-panel" id="Constraints"><div class="row"><div class="col-md-12"><table class="table table-condensed table-bordered">
+<thead><tr><th colspan="2"></th></tr></thead>
+<tr>
+<td class="col-md-3">Use Constraints</td>
+<td>
+<ul><li>Cite this dataset when used as a source.</li></ul>
+<ul><li>Use liability: NOAA and NCEI cannot provide any warranty as to the accuracy, reliability, or completeness of furnished data. Users assume responsibility to determine the usability of these data. The user is responsible for the results of any application of this data for other than its intended purpose.</li></ul>
+</td>
+</tr>
+<tr>
+<td class="col-md-3">Access Constraints</td>
+<td><ul><li>Distribution liability: NOAA and NCEI make no warranty, expressed or implied, regarding these data, nor does the fact of distribution constitute such a warranty. NOAA and NCEI cannot assume liability for any damages caused by any errors or omissions in these data. If appropriate, NCEI can only certify that the data it distributes are an authentic copy of the records that were accepted for inclusion in the NCEI archives.</li></ul></td>
+</tr>
+<tr>
+<td class="col-md-3">Fees</td>
+<td><ul><li>In most cases, electronic downloads of the data are free, however fees may apply for data certifications, copies of analog materials, and data distribution on physical media.</li></ul></td>
+</tr>
+</table></div></div></div>
+<div role="tabpanel" class="tab-pane ui-tabs-panel" id="Lineage"><div class="row"><div class="col-md-12 multi-table">
+<table class="table table-condensed table-bordered multi-table">
+<caption class="text-left"> Lineage information for: dataset</caption>
+<tr>
+<td class="col-md-3">Lineage Statement</td>
+<td>The Mariners Weather Log is produced by the National Weather Service, incorporating and analyzing data from the Voluntary Observing Ship (VOS) Data Program.</td>
+</tr>
+</table>
+<table class="table table-condensed table-bordered multi-table">
+<caption class="text-left"> Lineage information for: repository</caption>
+<tr>
+<td class="col-md-3">Processing Steps</td>
+<td><ul><li>2015-04-22T00:00:00 - NOAA created the National Centers for Environmental Information (NCEI) by merging NOAA's National Climatic Data Center (NCDC), National Geophysical Data Center (NGDC), and National Oceanographic Data Center (NODC), including the National Coastal Data Development Center (NCDDC), per the Consolidated and Further Continuing Appropriations Act, 2015, Public Law 113-235. NCEI launched publicly on April 22, 2015.</li></ul></td>
+</tr>
+</table>
+</div></div></div>
+</div>
+</div></div>
+<div class="text-center"> Last Modified: 2018-11-05</div>
+<div class="text-center">For questions about the information on this page, please email: <a href="mailto:ncei.orders@noaa.gov?Mariners%20Weather%20Log">ncei.orders@noaa.gov</a>
+</div>
+</div></div>
+
+<footer id="footer" class="clearfix"><div class="inset">
+<div class="subfooter">
+<a role="link" href="http://www.commerce.gov/"><img src="/css/apps/iso/images/logos/logo_doc.png" alt="Click to visit the U.S. Department of Commerce Website"></a><a role="link" href="http://www.usa.gov"><img src="/css/apps/iso/images/logos/logo_usagov.png" alt="Click to visit USA.gov"></a><a role="link" href="http://www.ready.gov"><img src="/css/apps/iso/images/logos/logo_ready.png" alt="Click to visit Ready.gov"></a>
+</div>
+<ul class="menu">
+<li><a role="link" title="NCEI" href="https://www.ncei.noaa.gov/">NCEI</a></li>
+<li><a role="link" title="About NCEI" href="https://www.ncei.noaa.gov/about/">About NCEI</a></li>
+<li><a role="link" title="Employment" href="https://www.ncdc.noaa.gov/about/employment">Employment</a></li>
+</ul>
+<ul class="menu">
+<li><a role="link" title="NOAA's Privacy Policy" href="http://www.noaa.gov/privacy.html" rel="external">Privacy</a></li>
+<li><a role="link" title="Freedom of Information Act" href="http://www.rdc.noaa.gov/%7Efoia/" rel="external">FOIA</a></li>
+<li><a role="link" title="Information Quality" href="http://www.cio.noaa.gov/Policy_Programs/info_quality.html" rel="external">Information Quality</a></li>
+<li><a role="link" title="Disclaimer" href="http://www.noaa.gov/disclaimer.html" rel="external">Disclaimer</a></li>
+</ul>
+<ul class="menu last">
+<li><a role="link" title="Take Our Survey" href="//www.nodc.noaa.gov/survey.html">Take Our Survey</a></li>
+<li><a role="link" title="United States Department of Commerce" href="http://www.commerce.gov/" rel="external">Department of Commerce</a></li>
+<li><a role="link" title="NOAA" href="http://www.noaa.gov" rel="external">NOAA</a></li>
+<li><a role="link" title="NESDIS" href="http://www.nesdis.noaa.gov/" rel="external">NESDIS</a></li>
+</ul>
+<div class="clearfix"></div>
+<div id="footerCrumbs" class="clearfix">
+<a class="ext" href="http://www.commerce.gov/" target="_blank" title="Department of Commerce">Department of Commerce</a><span class="ext">&nbsp;</span>&nbsp;&gt;&nbsp;<a class="ext" href="http://www.noaa.gov/" target="_blank" title="NOAA">NOAA</a><span class="ext">&nbsp;</span>&nbsp;&gt;&nbsp;<a class="ext" href="http://www.nesdis.noaa.gov/" target="_blank" title="NESDIS">NESDIS</a><span class="ext">&nbsp;</span>&nbsp;&gt;&nbsp;<a href="//www.ncei.noaa.gov/" title="NCEI">NCEI</a>
+</div>
+</div></footer>
+</div></body>
+</html>
+
