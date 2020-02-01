@@ -16,11 +16,12 @@ MAINTAINER David Valentine dwvalentine@usdc.edu
 
 # Install geoportal web application
 ARG GPTGITURL=https://github.com/esri/geoportal-server-catalog.git
+ARG GTPGITBRANCH=master
 # Install harvester application
 ARG HRVGITURL=https://github.com/esri/geoportal-server-harvester.git
 
 WORKDIR /tmp
-RUN git clone ${GPTGITURL} geoportal-server-catalog
+RUN git clone -depth=1 --branch ${GTPGITBRANCH} ${GPTGITURL} geoportal-server-catalog
 WORKDIR /tmp/geoportal-server-catalog/geoportal/src/main/resources/config
 #ENV HARVESTER_CONFIG_DIR=/tmp/harvester/geoportal-application/geoportal-harvester-war/src/main/resources/config/
 COPY config/geoportal/ .
