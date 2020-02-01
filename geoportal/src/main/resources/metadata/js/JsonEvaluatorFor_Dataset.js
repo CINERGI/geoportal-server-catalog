@@ -41,30 +41,34 @@ J.evaluators.dataset = {
     J.evalProps(task,item,doc,"keywords_s","$['keywords']");
       // G.evalProps(task,item,root,"links_s","//dct:references | dc:relations");
     // or dcat:accessUrl but that might make many duplicates
-    J.evalProps(task,item,doc,"links_s","$['distribution'][*]['url']");
-      // G.evalProp(task,item,dsc,"thumbnail_s","dct:references[@scheme='urn:x-esri:specification:ServiceType:ArcIMS:Metadata:Thumbnail']");
-      //
+    J.evalProps(task,item,doc,"links_s","$['distribution']..['url']");
+    J.evalProps(task,item,doc,"links_s","$['distribution']..['contentUrl']");
+      // G.evalProp(task,item,doc,"thumbnail_s","dct:references[@scheme='urn:x-esri:specification:ServiceType:ArcIMS:Metadata:Thumbnail']");
+    J.evalProp(task,item,doc,"thumbnail_s","$['image']['url']");  //
       // G.evalProps(task,item,dsc,"contact_organizations_s","dc:creator | dc:contributor");
-    J.evalProps(task,item,doc,"contact_organizations_s","$['creator'][*]['creator']['name']");
+    J.evalProps(task,item,doc,"contact_organizations_s","$['creator']..[?(@.@type=='Organization')]['name']");
       // G.evalProps(task,item,dsc,"contact_people_s","dc:creator | dc:contributor");
-    J.evalProps(task,item,doc,"contact_people_s","$['creator'][*]['creator']['name']");
+    J.evalProps(task,item,doc,"contact_people_s","$['creator']..[?(@.@type=='Person')]['name']");
       // G.evalProps(task,item,dsc,"type_s","dc:type");
-    //J.evalProps(task,item,doc,"type_s","dc:type");
+    J.evalProps(task,item,doc,"type_s","$['distribution']..['description']");
       // G.evalProps(task,item,dsc,"format_s","dc:format");
-    //J.evalProps(task,item,doc,"format_s","dc:type");
+    // ideally $['distribution'][*]..['url','contentUrl'] would work.
+    //  this does work, but it's not always an array $['distribution'][*]['url','contentUrl']
+    J.evalProps(task,item,doc,"format_s","$['distribution']..['fileFormat']");
+    J.evalProps(task,item,doc,"format_s","$['distribution']..['encodingFormat']");
       // // time.. use first element found. Others in timeperiod_nst
 
       // G.evalProp(task,item,dsc,"apiso_CreationDate_dt","dct:created | //dct:issued");
-    J.evalProp(task,item,doc,"apiso_CreationDate_dt","$.datePublished");
+    J.evalProp(task,item,doc,"apiso_CreationDate_dt","$['dateCreated']");
       // //G.evalProp(task,item,root,"apiso_RevisionDate_dt","dc:format");
       // G.evalProp(task,item,dsc,"apiso_PublicationDate_dt","//dct:issued | //dct:dateCopyrighted | //dct:created ");
-    J.evalProp(task,item,doc,"apiso_PublicationDate_dt","$.datePublished");
+    J.evalProp(task,item,doc,"apiso_PublicationDate_dt","$['datePublished']");
       // // core returnables
       // G.evalProps(task,item,dsc,"publisher_s","dc:publisher | dct:publisher");
     J.evalProp(task,item,doc,"publisher_s","$.publisher"); // is this repeatable? Might need to modify evalProps to check if string is returned.
       // G.evalProps(task,item,dsc,"contributor_s","dc:contributor | dct:contributor");
       // G.evalProps(task,item,dsc,"creator_s","dc:creator | dct:creator ");
-    J.evalProps(task,item,doc,"creator_s","$['creator'][*]['creator']['name']");
+    J.evalProps(task,item,doc,"creator_s","$['creator']..['name']");
   },
     evalTitleAndDescription: function(task){
         var item = task.item, doc=task.mdoc.getSuppliedJson();
