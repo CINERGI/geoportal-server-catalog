@@ -186,7 +186,7 @@ public class MetadataCLI{
 
         MetadataDocument mdoc = new MetadataDocument();
         mdoc.setItemId("test");
-        if (format=="json"){
+        if (format.equals("json")){
 
             JsonNode jsonNode = mapper.readTree(p.getAbsoluteFile());
             mdoc.setSuppliedJson(jsonNode.toString());
