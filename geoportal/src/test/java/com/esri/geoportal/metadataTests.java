@@ -27,6 +27,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -90,9 +91,9 @@ public class metadataTests{
 
 
     @ParameterizedTest
-    @CsvSource({ "testdata/schema_org/jsonld/usgin_08d5b1c2-77d8-4264-b3cb-ac6297849207.json, True, 'json', false" ,
-            "testdata/iso19115/linkstest.xml, True, 'xml', false" })
-    public  void testScriptEvaluator( File metadata, Boolean verbose,String format, Boolean extract) throws Exception {
+    @CsvSource({ "/testdata/schema_org/jsonld/usgin_08d5b1c2-77d8-4264-b3cb-ac6297849207.json, True, 'json', false" ,
+            "/testdata/iso19115/linkstest.xml, True, 'xml', false" })
+    public  void testScriptEvaluator( String metadata, Boolean verbose,String format, Boolean extract) throws Exception {
         System.err.println("IGNORE errors above this line. This needs to be reworked as a spring shell application");
 
        // ObjectMapper mapper = new ObjectMapper();
@@ -102,7 +103,9 @@ public class metadataTests{
 //        Evaluator evaluator = GeoportalContext.getInstance().getBeanIfDeclared(
 //                "metadata.Evaluator",Evaluator.class,new Evaluator());
         Evaluator evaluator = this.evaluator;
-        File p = metadata;
+        URL res = getClass().getResource(metadata);
+        File p = Paths.get(res.toURI()).toFile();
+       // File p = metadata;
 
 
         MetadataDocument mdoc = new MetadataDocument();
@@ -112,7 +115,7 @@ public class metadataTests{
             JsonNode jsonNode = mapper.readTree(p.getAbsoluteFile());
             mdoc.setSuppliedJson(jsonNode.toString());
             mdoc.evaluateSuppliedJson();
-
+            mdoc.validate();
         } else {
             String xml = XmlUtil.readFile(p.getAbsolutePath());
             mdoc.setXml(xml);
@@ -173,9 +176,11 @@ public class metadataTests{
         mdoc.setItemId("test");
 
 
-//            JsonNode jsonNode = mapper.readTree(p.getAbsoluteFile());
-//            mdoc.setSuppliedJson(jsonNode.toString());
-//            mdoc.evaluateSuppliedJson();
+      //  JsonNode jsonNode = mapper.readTree(p.getAbsoluteFile());
+      //  mdoc.setSuppliedJson(jsonNode.toString());
+        mdoc.setSuppliedJson(JsonLdUtil.jsonLdObject2String(context));
+        mdoc.evaluateSuppliedJson();
+        mdoc.validate();
 
     }
 }

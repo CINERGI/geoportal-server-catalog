@@ -39,6 +39,11 @@ public class JsonLdUtil {
         }
         throw new Exception("No script[type$=application/ld+json]in HTML");
     }
+     public static String jsonLdObject2String(Object extractedJsonLDObject) throws Exception{
+        String out = JsonUtils.toString(extractedJsonLDObject);
+
+        return out;
+     }
 
 
 
