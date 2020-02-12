@@ -142,7 +142,7 @@ public class PublishMetadataRequest extends com.esri.geoportal.lib.elastic.reque
       mdoc.setSuppliedJson(json);
       mdoc.evaluateSuppliedJson();
       // TODO set the title
-      // mdoc.validate();
+      mdoc.validate();
       // TODO interrogate evaluate validate
     }
     

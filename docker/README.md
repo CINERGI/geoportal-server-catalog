@@ -90,3 +90,7 @@ for production:
 https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 $ grep vm.max_map_count /etc/sysctl.conf
 vm.max_map_count=262144
+
+
+# using docker to debug:
+https://blog.jetbrains.com/idea/2019/04/debug-your-java-applications-in-docker-using-intellij-idea/

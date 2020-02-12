@@ -146,7 +146,7 @@ public class PublishMetadataRequest extends AppRequest {
       mdoc.setSuppliedJson(json);
       // TODO set the title
       mdoc.evaluateSuppliedJson();
-      // mdoc.validate();
+      mdoc.validate();
       // TODO interrogate evaluate validate
     }
     
