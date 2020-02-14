@@ -71,7 +71,17 @@ public class FieldNames {
   
   /** FIELD_SYS_XMLMODIFIED = "sys_xmlmodified_dt" */
   public static String FIELD_SYS_XMLMODIFIED = "sys_xmlmodified_dt";
-  
+
+  /* == JSON/HTML Sources ===================================================== */
+  /** FIELD_SYS_XML = "sys_xml_clob" */
+  public static String FIELD_SYS_SOURCE = "sys_source_clob";
+
+  /** FIELD_SYS_XMLMETA = "sys_xmlmeta_obj" */
+  public static String FIELD_SYS_SOURCEMETA = "sys_sourcemeta_obj";
+
+  /** FIELD_SYS_XMLMODIFIED = "sys_sourcemodified_dt" */
+  public static String FIELD_SYS_SOURCEMODIFIED = "sys_sourcemodified_dt";
+
   /* sys (kvp) ===================================================== */
   
   /** FIELD_SYS_BLOB = "sys_blob" */
@@ -85,5 +95,6 @@ public class FieldNames {
   
   /** FIELD_SYS_META = "sys_meta" */
   public static String FIELD_SYS_META = "sys_meta";
+
 
 }

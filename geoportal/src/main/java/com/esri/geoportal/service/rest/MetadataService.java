@@ -20,6 +20,7 @@ import com.esri.geoportal.lib.elastic.request.DeleteItemRequest;
 import com.esri.geoportal.lib.elastic.request.DeleteItemsRequest;
 import com.esri.geoportal.lib.elastic.request.GetItemRequest;
 import com.esri.geoportal.lib.elastic.request.GetMetadataRequest;
+import com.esri.geoportal.lib.elastic.request.GetOriginalMetadataRequest;
 import com.esri.geoportal.lib.elastic.request.PublishMetadataRequest;
 import com.esri.geoportal.lib.elastic.request.RealiasRequest;
 import com.esri.geoportal.lib.elastic.request.ReindexRequest;
@@ -139,7 +140,16 @@ public class MetadataService {
     boolean pretty = false;
     return this.transformMetadata(user,pretty,true,id,null,null);
   }
-  
+  @GET
+  @Path("/item/{id}/source")
+  public Response getSource(
+          @Context SecurityContext sc,
+          @Context HttpServletRequest hsr,
+          @PathParam("id") String id) {
+    AppUser user = new AppUser(hsr,sc);
+    return this.getOriginalMetadataRequest(user,id);
+  }
+
   @PUT
   @Path("/item")
   public Response put(
@@ -456,7 +466,25 @@ public class MetadataService {
       return this.writeException(t,pretty);
     }
   }
-  
+  /**
+   * Get item original metadata.
+   * @param user the active user
+   * @param id the item id
+   * @return the response
+   */
+  protected Response getOriginalMetadataRequest(AppUser user, String id) {
+    boolean pretty = false;
+    try {
+      GetOriginalMetadataRequest request = GeoportalContext.getInstance().getBean(
+              "request.GetOriginalMetadataRequest",GetOriginalMetadataRequest.class);
+      request.init(user,pretty);
+      request.init(id);
+      AppResponse response = request.execute();
+      return response.build();
+    } catch (Throwable t) {
+      return this.writeException(t,pretty);
+    }
+  }
   /**
    * Publish metadata.
    * @param user the active user

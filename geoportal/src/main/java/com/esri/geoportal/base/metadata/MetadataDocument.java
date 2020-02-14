@@ -42,6 +42,7 @@ public class MetadataDocument {
     private MetadataType metadataType;
     private boolean requiresXmlWrite;
     private String suppliedJson;
+    private boolean requiresSourceWrite;
     private String title;
     private String xml;
 
@@ -355,5 +356,18 @@ public class MetadataDocument {
         validator.validateTitle(this);
     }
 
-
+    /**
+     *  True if original source (JSON/HTML) should be written to store
+     * @return
+     */
+    public boolean getRequiresSourceWrite() {
+        return requiresSourceWrite;
+    }
+    /**
+     *  True is original source (JSON/HTML) should be written to store
+     * @return
+     */
+    public void setRequiresSourceWrite(boolean requiresSourceWrite) {
+        this.requiresSourceWrite = requiresSourceWrite;
+    }
 }

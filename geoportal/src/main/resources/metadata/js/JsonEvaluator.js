@@ -118,6 +118,7 @@ function evaluateSuppliedJson(mdoc) {
   // mdoc.setSuppliedJson(JSON.stringify(item));
   J._interrogate(mdoc);
   J._evaluate(mdoc);
+  mdoc.setRequiresSourceWrite(true);
   //mdoc.setEvaluatedJson(JSON.stringify(item)); // change when evaluation happens
   print("JsonEvaluator::evaluateSuppliedJson exit");
 }

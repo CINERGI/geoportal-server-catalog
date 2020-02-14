@@ -262,20 +262,39 @@ function(declare, lang, array, string, topic, xhr, on, appTopics, domClass, domC
       if (AppContext.appConfig.searchResults.showLinks) {
         var actionsNode = this.actionsNode;
         var uri = "./rest/metadata/item/"+encodeURIComponent(itemId);
-        var htmlNode = domConstruct.create("a",{
-          href: uri+"/html",
-          target: "_blank",
-          title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
-          "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
-          innerHTML: i18n.item.actions.html
-        },actionsNode);
-        var xmlNode = domConstruct.create("a",{
-          href: uri+"/xml",
-          target: "_blank",
-          title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.xml, title: item.title}),
-          "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.xml, title: item.title}),
-          innerHTML: i18n.item.actions.xml
-        },actionsNode);
+        if (item['sys_metadatatype_s'] == 'JSON-LD Dataset' ) {
+          // var htmlNode = domConstruct.create("a",{
+          //   href: uri+"/html",
+          //   target: "_blank",
+          //   title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
+          //   "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
+          //   innerHTML: i18n.item.actions.html
+          // },actionsNode);
+          var htmlNode = domConstruct.create("span",{
+                        innerHTML: "No HTML "
+          },actionsNode);
+        }
+        else {
+            var htmlNode = domConstruct.create("a",{
+            href: uri+"/html",
+            target: "_blank",
+            title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
+            "aria-label": string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.html, title: item.title}),
+            innerHTML: i18n.item.actions.html
+          },actionsNode);
+        }
+        if (item['sys_metadatatype_s'] != 'JSON-LD Dataset' ) { // needs to be done as a set
+          var xmlNode = domConstruct.create("a", {
+            href: uri + "/xml",
+            target: "_blank",
+            title: string.substitute(i18n.item.actions.titleFormat, {action: i18n.item.actions.xml, title: item.title}),
+            "aria-label": string.substitute(i18n.item.actions.titleFormat, {
+              action: i18n.item.actions.xml,
+              title: item.title
+            }),
+            innerHTML: i18n.item.actions.xml
+          }, actionsNode);
+        }
         var jsonNode = domConstruct.create("a",{
           href: uri+"?pretty=true",
           target: "_blank",
